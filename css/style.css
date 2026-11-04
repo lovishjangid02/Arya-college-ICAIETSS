@@ -1153,6 +1153,84 @@ section {
 }
 
 /* --------------------------------------------------------------------------
+   Track 03 Custom Reference Styling (Orange Header + Peach Box)
+   -------------------------------------------------------------------------- */
+.track-card.track-card-3 {
+  padding: 0;
+  overflow: hidden;
+  border-color: rgba(204, 110, 59, 0.45);
+}
+
+.track-card.track-card-3::before {
+  display: none;
+}
+
+.track-3-banner {
+  background: #cc6e3b;
+  padding: 16px 22px;
+}
+
+.track-3-banner-title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.track-3-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.track-3-peach-box {
+  background: #f5e5dc;
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.track-3-peach-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.track-3-peach-box li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #413f3c;
+  margin-bottom: 9px;
+  line-height: 1.5;
+}
+
+.track-3-peach-box li:last-child {
+  margin-bottom: 0;
+}
+
+.track-3-peach-box li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #413f3c;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.track-card.track-card-3 .track-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border-light);
+  padding-top: 14px;
+}
+
+/* --------------------------------------------------------------------------
    9. IMPORTANT DATES & COUNTDOWN TIMELINE
    -------------------------------------------------------------------------- */
 .dates-wrapper {
