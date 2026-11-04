@@ -1028,109 +1028,103 @@ section {
    -------------------------------------------------------------------------- */
 .tracks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
 }
 
 .track-card {
   background: var(--bg-surface);
-  border: 1px solid var(--border-light);
+  border: 1px solid rgba(204, 110, 59, 0.42);
   border-radius: var(--radius-lg);
-  padding: 32px 28px;
   box-shadow: var(--shadow-sm);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-.track-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--primary-gradient);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 .track-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--border-active);
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(204, 110, 59, 0.2);
+  border-color: #cc6e3b;
 }
 
-.track-card:hover::before {
-  opacity: 1;
-}
-
-.track-header {
+/* Orange/Burnt-Orange Title Header for Every Track */
+.track-banner {
+  background: #cc6e3b;
+  padding: 16px 22px;
+  min-height: 72px;
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 20px;
 }
 
-.track-icon-wrapper {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(var(--primary-rgb), 0.1);
-  color: var(--primary);
+.track-banner-title {
+  font-family: 'Barlow Condensed', 'Arial Narrow', 'Instrument Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0;
+  text-align: left;
+}
+
+/* Card Body */
+.track-body {
+  padding: 20px 22px 22px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.track-number {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--primary);
-  letter-spacing: 0.05em;
-  margin-bottom: 2px;
-}
-
-.track-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-main);
-  line-height: 1.3;
-}
-
-.track-topics-list {
-  list-style: none;
-  margin-bottom: 24px;
+  flex-direction: column;
   flex-grow: 1;
 }
 
-.track-topics-list li {
+/* Light Peach Topics Container with Rounded Corners */
+.track-peach-box {
+  background: #f5e5dc;
+  border-radius: 16px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.track-peach-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.track-peach-box li {
   position: relative;
   padding-left: 18px;
-  font-size: 13.5px;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-  line-height: 1.45;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #413f3c;
+  margin-bottom: 9px;
+  line-height: 1.5;
 }
 
-.track-topics-list li::before {
+.track-peach-box li:last-child {
+  margin-bottom: 0;
+}
+
+.track-peach-box li::before {
   content: "•";
   position: absolute;
-  left: 4px;
-  color: var(--primary);
-  font-weight: bold;
+  left: 0;
+  top: 0;
+  color: #413f3c;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
+/* Track Footer */
 .track-footer {
   border-top: 1px solid var(--border-light);
   padding-top: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: auto;
 }
 
 .track-meta {
@@ -1146,88 +1140,13 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .track-btn-submit:hover {
+  color: #cc6e3b;
+  transform: translateX(2px);
   text-decoration: underline;
-}
-
-/* --------------------------------------------------------------------------
-   Track 03 Custom Reference Styling (Orange Header + Peach Box)
-   -------------------------------------------------------------------------- */
-.track-card.track-card-3 {
-  padding: 0;
-  overflow: hidden;
-  border-color: rgba(204, 110, 59, 0.45);
-}
-
-.track-card.track-card-3::before {
-  display: none;
-}
-
-.track-3-banner {
-  background: #cc6e3b;
-  padding: 16px 22px;
-}
-
-.track-3-banner-title {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: -0.015em;
-  color: #ffffff;
-  line-height: 1.25;
-  margin: 0;
-}
-
-.track-3-body {
-  padding: 20px 22px 22px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.track-3-peach-box {
-  background: #f5e5dc;
-  border-radius: 16px;
-  padding: 22px 24px;
-  margin-bottom: 20px;
-  flex-grow: 1;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-}
-
-.track-3-peach-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.track-3-peach-box li {
-  position: relative;
-  padding-left: 18px;
-  font-size: 14.5px;
-  font-weight: 500;
-  color: #413f3c;
-  margin-bottom: 9px;
-  line-height: 1.5;
-}
-
-.track-3-peach-box li:last-child {
-  margin-bottom: 0;
-}
-
-.track-3-peach-box li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #413f3c;
-  font-size: 16px;
-  line-height: 1.2;
-}
-
-.track-card.track-card-3 .track-footer {
-  margin-top: auto;
-  border-top: 1px solid var(--border-light);
-  padding-top: 14px;
 }
 
 /* --------------------------------------------------------------------------
@@ -2479,6 +2398,11 @@ textarea.form-control {
    18. RESPONSIVE BREAKPOINTS (LUMEN ROOF SPEC <= 820px)
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
+  .tracks-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
   .about-grid,
   .dates-wrapper,
   .venue-grid,
@@ -2550,6 +2474,7 @@ textarea.form-control {
     padding: 0 16px;
   }
 
+  .tracks-grid,
   .guidelines-grid,
   .pub-partners-grid,
   .about-features,
