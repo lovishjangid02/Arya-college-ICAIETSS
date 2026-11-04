@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ICETIS-2026 | International Conference on Emerging Technologies and Innovative Solutions | Arya College Jaipur
+  <title>ICETIS-2026 | International Conference on Emerging Technologies and Innovative Solutions | Arya College of
+    Engineering
   </title>
   <meta name="description"
-    content="ICETIS-2026 — International Conference on Emerging Technologies and Innovative Solutions, December 18–19, 2026 at Arya College of Engineering & Technology, Jaipur, India. Technically sponsored and indexed in Scopus / Springer / IEEE.">
+    content="ICETIS-2026 — International Conference on Emerging Technologies and Innovative Solutions, December 18–19, 2026 at Arya College of Engineering, Jaipur, India. Technically sponsored and indexed in Scopus / Springer / IEEE.">
   <meta name="keywords"
-    content="ICETIS 2026, Arya College of Engineering, AIET Jaipur, Arya Group of Colleges, International Conference, AI, Machine Learning, IoT, Cloud Computing, Scopus, Springer, IEEE">
-  <meta name="author" content="Arya College of Engineering & Technology, Jaipur">
+    content="ICETIS 2026, Arya College of Engineering, International Conference, AI, Machine Learning, IoT, Cloud Computing, Scopus, Springer, IEEE">
+  <meta name="author" content="Arya College of Engineering, Jaipur">
 
   <!-- Favicon -->
   <link rel="icon"
@@ -24,16 +25,15 @@
     rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=10">
 </head>
 
 <body>
 
   <!-- =======================================================================
-       HERO SECTION — IMMERSIVE LUMEN ROOF DAY/NIGHT VISUAL EXPERIENCE
+       SHARED CONTINUOUS CINEMATIC PARALLAX BACKGROUND (FULL WEBSITE COVERAGE)
        ======================================================================= -->
-  <main class="hero" id="home">
-
+  <div class="site-parallax-bg" id="siteParallaxBg" aria-hidden="true">
     <!-- Layer 1: Atmospheric Sky (Day & Night Crossfade) -->
     <div class="layer sky" aria-hidden="true">
       <div class="sky-bg sky-day"></div>
@@ -41,7 +41,7 @@
       <div class="sky-stars"></div>
     </div>
 
-    <!-- Layer 2: Moving Campus Photograph (Exact Arya College Photo) -->
+    <!-- Layer 2: Moving Campus Photograph (Arya College of Engineering Photo) -->
     <div class="layer campus-stage" aria-label="Arya College of Engineering Campus">
       <!-- Day Mode Set -->
       <div class="set is-on" id="setDay">
@@ -63,13 +63,23 @@
     <!-- Layer 4: WebGL2 Procedural Rolling Fog Canvas -->
     <canvas id="fog" aria-hidden="true"></canvas>
 
+    <!-- Layer 5: Subtle Cinematic Readability Vignette & Depth Overlay -->
+    <div class="parallax-readability-overlay" id="parallaxOverlay"></div>
+  </div>
+
+  <!-- =======================================================================
+       HERO SECTION — IMMERSIVE FOREGROUND UI
+       ======================================================================= -->
+  <main class="hero" id="home">
+
     <!-- Layer 5: Hero UI Layer -->
     <div class="hero-ui">
 
       <!-- Top Navigation Header -->
       <header class="hero-bar">
-        <a href="#home" class="brand-badge" aria-label="Arya College Jaipur">
-          <img src="assets/images/arya-college-logo.png" alt="Arya College Main Campus, Jaipur" class="brand-logo-img">
+        <a href="#home" class="brand-badge" aria-label="Arya College of Engineering">
+          <img src="assets/images/arya-college-logo.png" alt="Arya College of Engineering, Jaipur"
+            class="brand-logo-img">
         </a>
 
         <ul class="nav-links">
@@ -87,6 +97,23 @@
         <div class="bar-actions">
           <a href="#guidelines" class="btn-header-ghost" data-open-modal="submit">Submit Paper</a>
           <a href="#registration" class="btn-header-cta" data-open-modal="register">Register Now</a>
+          <button id="navThemeToggle" class="nav-theme-toggle" type="button" aria-label="Toggle Day and Night Theme"
+            title="Switch to Night Mode">
+            <span class="nav-theme-icon" id="navThemeIcon">
+              <svg class="theme-svg-sun" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"
+                viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="5" />
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+              </svg>
+              <svg class="theme-svg-moon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+            </span>
+            <span class="nav-theme-text" id="navThemeText">Day</span>
+          </button>
           <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Open mobile menu">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
@@ -109,9 +136,9 @@
 
         <div class="hero-venue-banner">
           <span>📅 <b>December 18–19, 2026</b></span>
-          <span>•</span>
-          <span>📍 <b>Arya College of Engineering & Technology, Jaipur</b></span>
-          <span>•</span>
+          <span class="venue-separator">•</span>
+          <span>📍 <b>Arya College of Engineering, Jaipur</b></span>
+          <span class="venue-separator">•</span>
           <span>🏆 <b>Proceedings in Scopus & Springer</b></span>
         </div>
 
@@ -138,35 +165,7 @@
         </div>
       </div>
 
-      <!-- Bottom Glassmorphism Day/Night Toggle (Lumen Roof Design) -->
-      <div class="hero-dock">
-        <div class="dock-toggle" role="group" aria-label="Campus Theme Controller">
-          <button id="btnDay" class="toggle-opt" aria-pressed="true">
-            <div class="toggle-header">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="5" />
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-              </svg>
-              <b>Day Mode</b>
-            </div>
-            <small>Natural Daylight • Campus Sunshine</small>
-          </button>
 
-          <button id="btnNight" class="toggle-opt" aria-pressed="false">
-            <div class="toggle-header">
-              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-              </svg>
-              <b>Night Mode</b>
-            </div>
-            <small>Illuminated Campus • Evening Glow</small>
-          </button>
-        </div>
-        <p class="dock-caption">Experience Arya College of Engineering & Technology in dynamic daylight and evening
-          illumination.</p>
-      </div>
 
     </div>
   </main>
@@ -176,8 +175,9 @@
        ======================================================================= -->
   <nav class="sticky-nav" id="stickyNav" aria-label="Sticky Navigation">
     <div class="container sticky-nav-inner">
-      <a href="#home" class="sticky-brand" aria-label="Arya College Jaipur">
-        <img src="assets/images/arya-college-logo.png" alt="Arya College Main Campus, Jaipur" class="brand-logo-img sticky-logo-img">
+      <a href="#home" class="sticky-brand" aria-label="Arya College of Engineering">
+        <img src="assets/images/arya-college-logo.png" alt="Arya College of Engineering, Jaipur"
+          class="brand-logo-img sticky-logo-img">
       </a>
 
       <ul class="sticky-links">
@@ -203,7 +203,7 @@
   </nav>
 
   <!-- =======================================================================
-       SECTION 1: ABOUT THE CONFERENCE & ARYA COLLEGE
+       SECTION 1: ABOUT THE CONFERENCE & ARYA COLLEGE OF ENGINEERING
        ======================================================================= -->
   <section id="about">
     <div class="container">
@@ -264,19 +264,18 @@
           </div>
         </div>
 
-        <!-- Host Institution Card: Arya College AIET -->
+        <!-- Host Institution Card: Arya College of Engineering -->
         <div class="college-card">
           <div class="college-card-media">
-            <img src="assets/images/arya-campus.jpg"
-              alt="Arya Institute of Engineering & Technology Jaipur Main Campus">
+            <img src="assets/images/arya-campus.jpg" alt="Arya College of Engineering Jaipur Main Campus">
             <span class="college-badge-float">Host Institution • Estd. 2000</span>
           </div>
           <div class="college-card-body">
-            <h4>Arya College of Engineering & Technology</h4>
-            <p>Arya Institute of Engineering & Technology (AIET), Jaipur is the flagship institution of the Arya Group
-              of Colleges. Accredited with NAAC A+ and affiliated with Rajasthan Technical University (RTU), AIET is
-              renowned for its state-of-the-art incubation hubs, robotics centers, and 25-acre lush green campus
-              situated at Kukas, Jaipur.</p>
+            <h4>Arya College of Engineering</h4>
+            <p>Arya College of Engineering, Jaipur is the premier institution renowned for its state-of-the-art
+              incubation hubs, robotics centers, and 25-acre lush green campus situated at Kukas, Jaipur. Accredited
+              with NAAC A+ and affiliated with Rajasthan Technical University (RTU), the college is a pioneer in
+              technical higher education, scientific research, and innovative engineering solutions.</p>
 
             <div class="college-stats-row">
               <div class="c-stat-box">
@@ -327,10 +326,6 @@
                 <li>Autonomous Systems, Robotics &amp; Intelligent Agents</li>
               </ul>
             </div>
-            <div class="track-footer">
-              <span class="track-meta">Chairs: Dr. Michael Vance &amp; Dr. S. K. Gupta</span>
-              <a href="#guidelines" class="track-btn-submit" data-open-modal="submit">Submit to Track 01 &rarr;</a>
-            </div>
           </div>
         </div>
 
@@ -349,10 +344,6 @@
                 <li>Security, Cryptography &amp; Privacy in IoT Networks</li>
                 <li>Digital Twins, Telemetry &amp; Edge-AI Integration</li>
               </ul>
-            </div>
-            <div class="track-footer">
-              <span class="track-meta">Chairs: Dr. Elena Rostova &amp; Dr. R. Verma</span>
-              <a href="#guidelines" class="track-btn-submit" data-open-modal="submit">Submit to Track 02 &rarr;</a>
             </div>
           </div>
         </div>
@@ -373,10 +364,6 @@
                 <li>High-Performance Scientific Computing &amp; Optimization</li>
               </ul>
             </div>
-            <div class="track-footer">
-              <span class="track-meta">Chairs: Dr. P. K. Sharma &amp; Dr. Nathan White</span>
-              <a href="#guidelines" class="track-btn-submit" data-open-modal="submit">Submit to Track 03 &rarr;</a>
-            </div>
           </div>
         </div>
 
@@ -395,10 +382,6 @@
                 <li>Edge-to-Cloud Continuum &amp; Distributed Fog Computing</li>
                 <li>Traffic Engineering, Congestion Control &amp; QoS Provisioning</li>
               </ul>
-            </div>
-            <div class="track-footer">
-              <span class="track-meta">Chairs: Dr. Sunita Meena &amp; Dr. David Zhao</span>
-              <a href="#guidelines" class="track-btn-submit" data-open-modal="submit">Submit to Track 04 &rarr;</a>
             </div>
           </div>
         </div>
@@ -419,10 +402,6 @@
                 <li>Autonomous Agentic Workflows &amp; Tool-Augmented LLMs</li>
               </ul>
             </div>
-            <div class="track-footer">
-              <span class="track-meta">Chairs: Prof. Rajesh Sharma &amp; Dr. Amit Mittal</span>
-              <a href="#guidelines" class="track-btn-submit" data-open-modal="submit">Submit to Track 05 &rarr;</a>
-            </div>
           </div>
         </div>
 
@@ -441,10 +420,6 @@
                 <li>Graph Analytics &amp; Large-Scale Social Network Mining</li>
                 <li>Business Intelligence, Visual Analytics &amp; Decision Dashboards</li>
               </ul>
-            </div>
-            <div class="track-footer">
-              <span class="track-meta">Chairs: Dr. Akhilesh Kumar &amp; Dr. Hiroshi Sato</span>
-              <a href="#guidelines" class="track-btn-submit" data-open-modal="submit">Submit to Track 06 &rarr;</a>
             </div>
           </div>
         </div>
@@ -468,7 +443,7 @@
         <!-- Live Countdown Timer -->
         <div class="countdown-box">
           <h3>Conference Commences In</h3>
-          <p>Arya College of Engineering & Technology, Kukas, Jaipur</p>
+          <p>Arya College of Engineering, Kukas, Jaipur</p>
 
           <div class="timer-grid">
             <div class="timer-unit">
@@ -658,11 +633,31 @@
           November 20, 2026 to ensure publication in proceedings.</p>
       </div>
 
-      <!-- Currency Switcher -->
-      <div class="reg-controls">
-        <div class="currency-toggle" role="group" aria-label="Select Currency">
-          <button class="currency-btn active" id="btnInr">INR (₹) Indian</button>
-          <button class="currency-btn" id="btnUsd">USD ($) International</button>
+      <!-- Unified International Participants Banner -->
+      <div class="intl-pricing-banner">
+        <div class="intl-banner-main">
+          <div class="intl-banner-icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <div class="intl-banner-info">
+            <div class="intl-banner-title-row">
+              <h4>International Participants</h4>
+              <span class="intl-banner-badge">All Categories</span>
+            </div>
+            <p>Flat registration fee for all foreign authors, research scholars, academicians, and delegates worldwide. Online and in-person presentation options available.</p>
+          </div>
+        </div>
+        <div class="intl-banner-action">
+          <div class="intl-banner-price">
+            <span class="intl-price-currency">US$</span>
+            <span class="intl-price-val">30</span>
+            <span class="intl-price-sub">/ paper or delegate</span>
+          </div>
+          <button class="btn-intl-register" data-open-modal="register" data-category="intl">Register as International</button>
         </div>
       </div>
 
@@ -672,29 +667,32 @@
         <div class="pricing-card">
           <div class="pricing-header">
             <h4>Student / Scholar</h4>
-            <p>UG, PG, and PhD Research Scholars with valid student ID</p>
+            <p>UG, PG, and Research Scholars with valid student ID</p>
           </div>
           <div class="price-display">
             <span class="price-currency">₹</span>
-            <span class="price-amount" data-inr="1,000" data-usd="30">1,000</span>
+            <span class="price-amount">1,000</span>
             <span class="price-period">/ author</span>
           </div>
-          <span class="early-bird-tag">Single-Author Student Paper</span>
+          <span class="early-bird-tag">Single: ₹1,000 • Two Authors: ₹2,000</span>
           <ul class="pricing-features">
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> Full Technical Session Access</li>
+              </svg> Single-author student paper: <strong>₹1,000 total</strong></li>
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> Scopus/Springer Proceeding Inclusion</li>
+              </svg> Student paper with two authors: <strong>₹2,000 total</strong></li>
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> Presentation Certificate</li>
+              </svg> <em>(₹1,000 is the registration fee for one author)</em></li>
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> Conference Kit & Meals</li>
+              </svg> Full Technical Session Access & Certificate</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg> Scopus/Springer Proceeding Inclusion & Kit</li>
           </ul>
-          <button class="btn-card-register" data-open-modal="register">Register as Student</button>
+          <button class="btn-card-register" data-open-modal="register" data-category="student_single">Register as Student</button>
         </div>
 
         <!-- Academician / Faculty (Featured) -->
@@ -702,87 +700,96 @@
           <span class="pricing-badge-popular">Most Popular</span>
           <div class="pricing-header">
             <h4>Academician / Faculty</h4>
-            <p>Faculty members, scientists & university professors</p>
+            <p>Faculty members, scientists and university professors</p>
           </div>
           <div class="price-display">
             <span class="price-currency">₹</span>
-            <span class="price-amount" data-inr="2,000" data-usd="30">2,000</span>
+            <span class="price-amount">2,000</span>
             <span class="price-period">/ paper</span>
           </div>
-          <span class="early-bird-tag">Standard Registration Fee</span>
+          <span class="early-bird-tag">Registration Fee: ₹2,000 per paper</span>
           <ul class="pricing-features">
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> Full Technical & Keynote Access</li>
+              </svg> Registration fee: <strong>₹2,000 per paper</strong></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg> Faculty members, scientists & university professors</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg> Full Technical, Keynote & Plenary Access</li>
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
               </svg> Scopus/Springer Proceeding Inclusion</li>
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> Author Presentation Certificate</li>
-            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> Deluxe Kit, Lunch & Gala Banquet</li>
+              </svg> Author Certificate, Deluxe Kit & Banquet Lunch</li>
           </ul>
-          <button class="btn-card-register" data-open-modal="register">Register as Faculty</button>
+          <button class="btn-card-register" data-open-modal="register" data-category="faculty">Register as Faculty</button>
         </div>
 
-        <!-- Industry Delegate -->
+        <!-- Industry Delegate / Author -->
         <div class="pricing-card">
           <div class="pricing-header">
-            <h4>Industry Delegate</h4>
-            <p>Corporate researchers, R&D labs, and startup engineers</p>
+            <h4>Industry Delegate / Author</h4>
+            <p>Corporate researchers, R&D professionals and startup engineers</p>
           </div>
           <div class="price-display">
             <span class="price-currency">₹</span>
-            <span class="price-amount" data-inr="2,000" data-usd="30">2,000</span>
+            <span class="price-amount">2,000</span>
             <span class="price-period">/ delegate</span>
           </div>
-          <span class="early-bird-tag">Standard Registration Fee</span>
+          <span class="early-bird-tag">Registration Fee: ₹2,000</span>
           <ul class="pricing-features">
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> VIP Access to All Sessions</li>
+              </svg> Registration fee: <strong>₹2,000</strong></li>
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> Proceedings & Citation Access</li>
+              </svg> Corporate researchers & startup engineers</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg> Industry paper presentation & technical sessions</li>
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
               </svg> Industry Networking Lounge Access</li>
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> Premium Kit & Banquet Dinner</li>
+              </svg> Premium Kit, Refreshments & Banquet Access</li>
           </ul>
-          <button class="btn-card-register" data-open-modal="register">Register as Industry</button>
+          <button class="btn-card-register" data-open-modal="register" data-category="industry">Register as Industry</button>
         </div>
 
-        <!-- Attendee / Listener -->
+        <!-- Non-Presenting Attendee / Co-author -->
         <div class="pricing-card">
           <div class="pricing-header">
-            <h4>Non-Presenting Attendee</h4>
+            <h4>Non-Presenting Attendee / Co-author</h4>
             <p>Listeners, co-authors & visitors without paper presentation</p>
           </div>
           <div class="price-display">
             <span class="price-currency">₹</span>
-            <span class="price-amount" data-inr="500" data-usd="30">500</span>
+            <span class="price-amount">500</span>
             <span class="price-period">/ attendee</span>
           </div>
-          <span class="early-bird-tag">Standard Attendee Fee</span>
+          <span class="early-bird-tag">Registration Fee: ₹500 per attendee</span>
           <ul class="pricing-features">
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> Entry to All Keynote Presentations</li>
+              </svg> Registration fee: <strong>₹500 per attendee</strong></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg> Clearly includes co-authors & non-presenting attendees</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg> Admission to all keynote talks & technical halls</li>
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
               </svg> Attendee Certificate of Participation</li>
             <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> Daily Refreshments & Lunches</li>
-            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-              </svg> Conference Delegate Bag</li>
+              </svg> Daily Refreshments, Buffet Lunch & Delegate Bag</li>
           </ul>
-          <button class="btn-card-register" data-open-modal="register">Register as Attendee</button>
+          <button class="btn-card-register" data-open-modal="register" data-category="attendee">Register as Attendee</button>
         </div>
       </div>
 
@@ -799,7 +806,7 @@
           <table class="bank-info-table">
             <tr>
               <td>Account Name:</td>
-              <td>Arya Institute of Engg. & Technology (ICETIS)</td>
+              <td>Arya College of Engineering (ICETIS)</td>
             </tr>
             <tr>
               <td>Bank Name:</td>
@@ -835,9 +842,14 @@
             includes admission to all plenary keynotes, concurrent technical sessions, conference kit with proceeding
             USB/e-book, official certificate of presentation, morning/evening high tea, hot buffet lunches on both
             conference days, and the grand conference banquet dinner.</p>
-          <p style="font-size:13.5px;color:var(--text-light);line-height:1.5;">* In case of multiple papers by the same
-            author, a 20% discount applies on the second paper registration. At least one registration is mandatory per
-            accepted manuscript.</p>
+          <ul style="font-size:13px;color:var(--text-light);line-height:1.65;padding-left:18px;margin-bottom:0;">
+            <li><strong>Student / Scholar:</strong> Single-author paper: ₹1,000 total • Two authors: ₹2,000 total (₹1,000 per author).</li>
+            <li><strong>Academician / Faculty:</strong> Registration fee: ₹2,000 per paper.</li>
+            <li><strong>Industry Delegate / Author:</strong> Registration fee: ₹2,000.</li>
+            <li><strong>Non-Presenting Attendee / Co-author:</strong> Registration fee: ₹500 per attendee.</li>
+            <li><strong>International Participants:</strong> Flat registration fee: US$30 for all overseas categories.</li>
+            <li>* In case of multiple papers by the same author, a 20% discount applies on the second paper registration.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -900,7 +912,8 @@
       <div class="section-header">
         <span class="section-badge">Leadership & Committee</span>
         <h2 class="section-title">Keynote Speakers & Advisory Board</h2>
-        <p class="section-subtitle">Distinguished academic leadership, committee chairs, and faculty organizing ICETIS-2026 at Arya College of Engineering & Technology.</p>
+        <p class="section-subtitle">Distinguished academic leadership, committee chairs, and faculty organizing
+          ICETIS-2026 at Arya College of Engineering.</p>
       </div>
 
       <div class="committee-layout">
@@ -917,14 +930,14 @@
                 <div class="comm-member-avatar">AA</div>
                 <div class="comm-member-info">
                   <div class="comm-member-name">Dr. Arvind Agarwal</div>
-                  <div class="comm-member-desc">President, Arya Group of Colleges</div>
+                  <div class="comm-member-desc">President, Arya College of Engineering</div>
                 </div>
               </div>
               <div class="comm-member-row">
                 <div class="comm-member-avatar">PA</div>
                 <div class="comm-member-info">
                   <div class="comm-member-name">Dr. Puja Agarwal</div>
-                  <div class="comm-member-desc">Vice President, Arya Group of Colleges</div>
+                  <div class="comm-member-desc">Vice President, Arya College of Engineering</div>
                 </div>
               </div>
             </div>
@@ -1146,13 +1159,13 @@
       <div class="venue-grid">
         <div class="venue-card-main">
           <div class="venue-img-wrap">
-            <img src="assets/images/arya-campus.jpg"
-              alt="Arya College of Engineering & Technology Jaipur Campus Entrance">
-            <div class="venue-badge-overlay">Arya College Main Campus • Kukas, Jaipur</div>
+            <img src="assets/images/arya-campus.jpg" alt="Arya College of Engineering Jaipur Campus Entrance">
+            <div class="venue-badge-overlay">Arya College of Engineering Main Campus • Kukas, Jaipur</div>
           </div>
           <div class="venue-card-body">
-            <h4>Arya Institute of Engineering & Technology (AIET)</h4>
-            <p>Located on the Delhi-Jaipur National Highway (NH-48), Arya College boasts world-class auditorium halls,
+            <h4>Arya College of Engineering</h4>
+            <p>Located on the Delhi-Jaipur National Highway (NH-48), Arya College of Engineering boasts world-class
+              auditorium halls,
               air-conditioned seminar complexes, high-speed Wi-Fi research lounges, and green botanical gardens.</p>
             <div class="venue-connectivity-list">
               <div class="connect-item">
@@ -1186,7 +1199,7 @@
               <span class="attraction-icon">🏰</span>
               <div>
                 <div class="attraction-name">Amer Fort</div>
-                <div class="attraction-dist">12 km from Arya Campus</div>
+                <div class="attraction-dist">12 km from Arya College of Engineering</div>
               </div>
             </div>
 
@@ -1253,7 +1266,7 @@
             <div class="contact-icon-box">📍</div>
             <div>
               <h5>Conference Venue Address</h5>
-              <p>Arya Institute of Engineering & Technology (AIET)<br>SP-40, RIICO Industrial Area, Kukas, Jaipur,
+              <p>Arya College of Engineering<br>SP-40, RIICO Industrial Area, Kukas, Jaipur,
                 Rajasthan 302028, India</p>
             </div>
           </div>
@@ -1261,9 +1274,8 @@
           <div class="contact-card-item">
             <div class="contact-icon-box">✉️</div>
             <div>
-              <h5>Official Correspondence Emails</h5>
-              <p><a href="mailto:icetis2026@aryacollege.in">icetis2026@aryacollege.in</a><br><a
-                  href="mailto:convener.icetis@aryacollege.in">convener.icetis@aryacollege.in</a></p>
+              <h5>Official Correspondence Email</h5>
+              <p><a href="bgv@aryajaipur.com">bgv@aryajaipur.com</a></p>
             </div>
           </div>
 
@@ -1271,7 +1283,7 @@
             <div class="contact-icon-box">📞</div>
             <div>
               <h5>Helpline & Telephone</h5>
-              <p>+91-141-6604555 / +91-98290-76123<br>Available Monday to Saturday (9:00 AM – 5:30 PM IST)</p>
+              <p>0141-2820700 / +91-93511-57438 <br>Available Monday to Saturday (9:00 AM – 5:30 PM IST)</p>
             </div>
           </div>
 
@@ -1279,7 +1291,7 @@
             <div class="contact-icon-box">🌐</div>
             <div>
               <h5>Official Institution Portal</h5>
-              <p><a href="https://www.aryacollege.in" target="_blank" rel="noopener">www.aryacollege.in</a></p>
+              <p><a href="https://aryacollegejpr.com/" target="_blank" rel="noopener">www.aryacollege.in</a></p>
             </div>
           </div>
         </div>
@@ -1339,8 +1351,8 @@
       <div class="footer-grid">
         <div class="footer-brand-col">
           <h4>ICETIS-2026</h4>
-          <p>International Conference on Emerging Technologies and Innovative Solutions organized by Arya Institute of
-            Engineering & Technology (AIET), Jaipur, India.</p>
+          <p>International Conference on Emerging Technologies and Innovative Solutions organized by Arya College of
+            Engineering, Jaipur, India.</p>
           <p style="font-size:12.5px;color:#64748b;">December 18–19, 2026 • SP-40 RIICO Industrial Area Kukas Jaipur
             Rajasthan 302028</p>
         </div>
@@ -1381,7 +1393,7 @@
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 ICETIS-2026 | Arya College of Engineering & Technology, Jaipur. All Rights Reserved.</div>
+        <div>© 2026 ICETIS-2026 | Arya College of Engineering, Jaipur. All Rights Reserved.</div>
         <div>Designed with Lumen Roof Immersive Day/Night Technology</div>
       </div>
     </div>
@@ -1397,18 +1409,19 @@
       <button class="modal-close-btn" aria-label="Close modal">&times;</button>
       <div class="modal-header">
         <h3 id="regModalTitle">Conference Registration Form</h3>
-        <p>ICETIS-2026 • Arya College of Engineering & Technology, Jaipur</p>
+        <p>ICETIS-2026 • Arya College of Engineering, Jaipur</p>
       </div>
 
       <form id="regForm">
         <div class="form-group">
           <label for="regCategory">Registration Category *</label>
           <select id="regCategory" class="form-control" required>
-            <option value="student_inr">Indian Student / Research Scholar (₹1,000)</option>
-            <option value="faculty_inr" selected>Indian Academician / Faculty (₹2,000)</option>
-            <option value="industry_inr">Indian Industry Delegate (₹2,000)</option>
-            <option value="intl_participant">International Participants ($30 USD)</option>
-            <option value="attendee">Non-Presenting Attendee (₹500 / $30 USD)</option>
+            <option value="student_single">Student / Scholar — Single Author (₹1,000)</option>
+            <option value="student_dual">Student / Scholar — Two Authors (₹2,000)</option>
+            <option value="faculty" selected>Academician / Faculty (₹2,000 per paper)</option>
+            <option value="industry">Industry Delegate / Author (₹2,000)</option>
+            <option value="attendee">Non-Presenting Attendee / Co-author (₹500)</option>
+            <option value="intl">International Participants (US$30)</option>
           </select>
         </div>
 
@@ -1516,7 +1529,8 @@
     <div class="drawer-panel">
       <div class="drawer-header">
         <div class="brand-badge">
-          <img src="assets/images/arya-college-logo.png" alt="Arya College Main Campus, Jaipur" class="brand-logo-img" style="height: 36px; max-width: 190px;">
+          <img src="assets/images/arya-college-logo.png" alt="Arya College of Engineering, Jaipur"
+            class="brand-logo-img" style="height: 36px; max-width: 190px;">
         </div>
         <button id="closeDrawerBtn" class="modal-close-btn" style="position:static;"
           aria-label="Close navigation">&times;</button>
@@ -1547,8 +1561,9 @@
   <!-- Toast Notification Container -->
   <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
-  <!-- Main JavaScript File -->
-  <script src="js/main.js"></script>
+  <!-- Smooth Scrolling (Lenis) & Main JavaScript -->
+  <script src="js/lenis.min.js"></script>
+  <script src="js/main.js?v=10"></script>
 </body>
 
 </html>

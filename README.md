@@ -1,9 +1,9 @@
 # ICETIS-2026 — International Conference on Emerging Technologies and Innovative Solutions
 
-Official website for the **1st International Conference on Emerging Technologies and Innovative Solutions (ICETIS-2026)** organized by **Arya College of Engineering & Technology (AIET)**, Jaipur, Rajasthan, India.
+Official website for the **1st International Conference on Emerging Technologies and Innovative Solutions (ICETIS-2026)** organized by **Arya College of Engineering**, Jaipur, Rajasthan, India.
 
 📅 **Dates:** December 18–19, 2026  
-📍 **Venue:** Arya Institute of Engineering & Technology (AIET), SP-40, RIICO Industrial Area, Kukas, Jaipur, Rajasthan 302028  
+📍 **Venue:** Arya College of Engineering, SP-40, RIICO Industrial Area, Kukas, Jaipur, Rajasthan 302028  
 🏆 **Indexing:** Technically sponsored & proceedings submitted to Scopus, Web of Science, and Springer CCIS.
 
 ---
@@ -20,7 +20,7 @@ Official website for the **1st International Conference on Emerging Technologies
   - Primary Gold (`#D4AF37`), Champagne Gold (`#E6C875`), and Soft Gold (`#F3E5AB`) paired with Warm White (`#FFFDF5`), Pure White (`#FFFFFF`), and Deep Navy (`#111827`).
   - High-contrast, elegant typography using Google's *Instrument Sans*.
 - **Comprehensive Conference Sections:**
-  - **About:** Overview of ICETIS-2026 and Arya College of Engineering & Technology profile.
+  - **About:** Overview of ICETIS-2026 and Arya College of Engineering profile.
   - **Technical Tracks:** 6 tracks covering AI/ML, Cyber-Physical IoT, Cloud/Quantum Security, Big Data Healthcare, Green Smart Grids, and 5G/6G VLSI.
   - **Important Dates & Countdown:** Interactive live timer counting down to December 18, 2026.
   - **Call for Papers & Guidelines:** IEEE/Springer author guidelines, plagiarism thresholds, and template download triggers.
@@ -76,5 +76,5 @@ npx serve .
 ---
 
 ## 📜 License
-Copyright © 2026 Arya College of Engineering & Technology, Jaipur. All rights reserved.
+Copyright © 2026 Arya College of Engineering, Jaipur. All rights reserved.
 

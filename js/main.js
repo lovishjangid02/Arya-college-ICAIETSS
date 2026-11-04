@@ -1,5 +1,5 @@
 /**
- * ICETIS-2026 — Arya College of Engineering & Technology, Jaipur
+ * ICETIS-2026 — Arya College of Engineering, Jaipur
  * Core JavaScript Engine: Lumen Roof Day/Night WebGL Atmosphere & Interactive UI
  */
 
@@ -11,6 +11,27 @@
   const root = document.documentElement.style;
   const docEl = document.documentElement;
   const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // -------------------------------------------------------------------------
+  // LENIS SMOOTH SCROLLING SETUP
+  // -------------------------------------------------------------------------
+  let lenis = null;
+  if (typeof globalThis.Lenis !== 'undefined' && !calm) {
+    try {
+      lenis = new globalThis.Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        touchMultiplier: 1.5,
+        wheelMultiplier: 1.0,
+        infinite: false,
+        autoRaf: false
+      });
+      window.lenis = lenis;
+    } catch (e) {
+      console.warn('Lenis initialization failed:', e);
+    }
+  }
 
   // -------------------------------------------------------------------------
   // 1. THEME INITIALIZATION (DEFAULT DAY, PERSISTENCE VIA LOCALSTORAGE)
@@ -195,12 +216,24 @@
       setNight.classList.toggle('is-on', !!isNight);
     }
 
-    // Update ARIA attributes
+    // Update ARIA attributes for buttons if present
     const btnDay = $('btnDay');
     const btnNight = $('btnNight');
     if (btnDay && btnNight) {
       btnDay.setAttribute('aria-pressed', (!isNight).toString());
       btnNight.setAttribute('aria-pressed', (!!isNight).toString());
+    }
+
+    // Update navbar single theme toggle
+    const navThemeToggle = $('navThemeToggle');
+    const navThemeText = $('navThemeText');
+    if (navThemeText) {
+      navThemeText.textContent = isNight ? 'Night' : 'Day';
+    }
+    if (navThemeToggle) {
+      navThemeToggle.setAttribute('title', isNight ? 'Switch to Day Mode' : 'Switch to Night Mode');
+      navThemeToggle.setAttribute('aria-label', isNight ? 'Switch to Day Mode' : 'Switch to Night Mode');
+      navThemeToggle.setAttribute('aria-pressed', (!!isNight).toString());
     }
 
     // Update mini sticky nav toggle text/icon
@@ -254,6 +287,14 @@
   const btnNight = $('btnNight');
   if (btnDay) btnDay.onclick = () => pickTheme(0);
   if (btnNight) btnNight.onclick = () => pickTheme(1);
+
+  // Single navbar theme toggle button
+  const navThemeToggle = $('navThemeToggle');
+  if (navThemeToggle) {
+    navThemeToggle.onclick = () => {
+      pickTheme(target === 1 ? 0 : 1);
+    };
+  }
 
   // Mini sticky nav theme toggle button
   const stickyThemeToggle = $('stickyThemeToggle');
@@ -331,8 +372,39 @@
     }
   }
 
+  // -------------------------------------------------------------------------
+  // 5. ANIMATION FRAME LOOP (LUMEN ROOF SINK & FLOAT CLOCK + CINEMATIC PARALLAX)
+  // -------------------------------------------------------------------------
+  let currentParallaxY = 0;
+  let scrollDir = 'down';
+  let lastScrollY = window.scrollY || 0;
+
   function loop(t) {
     frame(t);
+    if (lenis) {
+      lenis.raf(t);
+      if (typeof lenis.direction !== 'undefined' && lenis.direction !== 0) {
+        scrollDir = lenis.direction === -1 ? 'up' : 'down';
+      }
+    } else {
+      const currentY = window.scrollY || window.pageYOffset || 0;
+      const delta = currentY - lastScrollY;
+      if (Math.abs(delta) > 1.5) {
+        scrollDir = delta > 0 ? 'down' : 'up';
+        lastScrollY = currentY;
+      }
+    }
+
+    if (!calm) {
+      const scrollY = lenis ? lenis.scroll : (window.scrollY || window.pageYOffset || 0);
+      const maxParallax = window.innerHeight * 0.12;
+      const targetP = Math.min(scrollY * 0.055, maxParallax);
+      currentParallaxY += (targetP - currentParallaxY) * 0.12;
+      root.setProperty('--parallax-y', `${currentParallaxY.toFixed(2)}px`);
+    } else {
+      root.setProperty('--parallax-y', '0px');
+    }
+
     requestAnimationFrame(loop);
   }
   requestAnimationFrame(loop);
@@ -386,36 +458,9 @@
   updateCountdown();
 
   // -------------------------------------------------------------------------
-  // 8. REGISTRATION CURRENCY TOGGLE (INR ₹ / USD $)
+  // 8. REGISTRATION PRICING & CATEGORIES
+  // Note: INR and USD pricing are now unified in the same section without toggling.
   // -------------------------------------------------------------------------
-  const btnInr = $('btnInr');
-  const btnUsd = $('btnUsd');
-  const priceElements = document.querySelectorAll('[data-inr][data-usd]');
-
-  function setCurrency(curr) {
-    if (curr === 'inr') {
-      if (btnInr) btnInr.classList.add('active');
-      if (btnUsd) btnUsd.classList.remove('active');
-      priceElements.forEach((el) => {
-        el.textContent = el.getAttribute('data-inr');
-      });
-      document.querySelectorAll('.price-currency').forEach((sym) => {
-        sym.textContent = '₹';
-      });
-    } else {
-      if (btnInr) btnInr.classList.remove('active');
-      if (btnUsd) btnUsd.classList.add('active');
-      priceElements.forEach((el) => {
-        el.textContent = el.getAttribute('data-usd');
-      });
-      document.querySelectorAll('.price-currency').forEach((sym) => {
-        sym.textContent = '$';
-      });
-    }
-  }
-
-  if (btnInr) btnInr.onclick = () => setCurrency('inr');
-  if (btnUsd) btnUsd.onclick = () => setCurrency('usd');
 
   // -------------------------------------------------------------------------
   // 9. MODALS SYSTEM (REGISTER NOW & SUBMIT PAPER)
@@ -427,18 +472,25 @@
     if (!modal) return;
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (lenis) lenis.stop();
   }
 
   function closeModal(modal) {
     if (!modal) return;
     modal.classList.remove('active');
     document.body.style.overflow = '';
+    if (lenis) lenis.start();
   }
 
   // Open triggers
   document.querySelectorAll('[data-open-modal="register"]').forEach((btn) => {
     btn.onclick = (e) => {
       e.preventDefault();
+      const cat = btn.getAttribute('data-category');
+      const select = $('regCategory');
+      if (cat && select) {
+        select.value = cat;
+      }
       openModal(registerModal);
     };
   });
@@ -549,11 +601,13 @@
   function openMobileDrawer() {
     if (mobileNavDrawer) mobileNavDrawer.classList.add('open');
     document.body.style.overflow = 'hidden';
+    if (lenis) lenis.stop();
   }
 
   function closeMobileDrawer() {
     if (mobileNavDrawer) mobileNavDrawer.classList.remove('open');
     document.body.style.overflow = '';
+    if (lenis) lenis.start();
   }
 
   if (mobileMenuBtn) mobileMenuBtn.onclick = openMobileDrawer;
@@ -568,6 +622,164 @@
   document.querySelectorAll('.drawer-links a').forEach((link) => {
     link.onclick = closeMobileDrawer;
   });
+
+  // -------------------------------------------------------------------------
+  // 13. SMOOTH IN-PAGE ANCHOR NAVIGATION (LENIS INTEGRATION)
+  // -------------------------------------------------------------------------
+  document.querySelectorAll('a[href^="#"]:not([data-open-modal])').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#' || href.length < 2) return;
+      const targetEl = document.querySelector(href);
+      if (targetEl) {
+        e.preventDefault();
+        const offset = href === '#home' ? 0 : -72;
+        if (lenis) {
+          lenis.scrollTo(targetEl, { offset: offset, duration: 1.15 });
+        } else {
+          const rect = targetEl.getBoundingClientRect();
+          window.scrollTo({
+            top: window.pageYOffset + rect.top + offset,
+            behavior: 'smooth'
+          });
+        }
+        if (history.pushState) {
+          history.pushState(null, '', href);
+        }
+      }
+    });
+  });
+
+  // -------------------------------------------------------------------------
+  // 14. BIDIRECTIONAL SCROLL REVEAL ANIMATION SYSTEM
+  // -------------------------------------------------------------------------
+  function initScrollReveals() {
+    if (calm) return; // Respect prefers-reduced-motion
+
+    // Activate reveal transitions
+    docEl.classList.add('js-reveal-ready');
+
+    // 1. Standalone module containers & headers
+    const standaloneSelectors = [
+      '#home .conference-tag',
+      '#home .hero-title',
+      '#home .hero-venue-banner',
+      '#home .hero-actions',
+      '#home .hero-bottom-bar',
+      '.section-header',
+      '#about .about-content',
+      '#about .college-card',
+      '#dates .dates-notice-card',
+      '#guidelines .submission-banner',
+      '#registration .intl-pricing-banner',
+      '#registration .detail-box',
+      '#registration .bank-details-card',
+      '#registration .reg-notes-box',
+      '#publication .pub-notice-box',
+      '#venue .venue-card-main',
+      '#venue .jaipur-guide-box',
+      '#contact .contact-form-card',
+      '.footer-bottom'
+    ];
+
+    standaloneSelectors.forEach((sel) => {
+      document.querySelectorAll(sel).forEach((el) => {
+        el.classList.add('reveal-on-scroll');
+        if (sel.includes('.college-card') || sel.includes('.venue-card-main')) {
+          el.classList.add('reveal-scale');
+        }
+      });
+    });
+
+    // 2. Grids and multi-card groups with stagger effect
+    const staggeredGroups = [
+      { selector: '#about .about-features .about-feature-item', stagger: 90, scale: false },
+      { selector: '#about .stats-grid .stat-item', stagger: 80, scale: true },
+      { selector: '#tracks .tracks-grid .track-card', stagger: 90, scale: true },
+      { selector: '#dates .timeline-item', stagger: 80, scale: false },
+      { selector: '#guidelines .guidelines-grid .guide-card', stagger: 90, scale: false },
+      { selector: '#registration .pricing-cards-grid .pricing-card', stagger: 120, scale: true },
+      { selector: '#publication .pub-partners-grid .pub-partner-card', stagger: 80, scale: true },
+      { selector: '#speakers .comm-card', stagger: 80, scale: true },
+      { selector: '#venue .attractions-grid .attraction-pill', stagger: 60, scale: false },
+      { selector: '#contact .contact-info-col .contact-card-item', stagger: 80, scale: false },
+      { selector: '.site-footer .footer-col', stagger: 80, scale: false }
+    ];
+
+    staggeredGroups.forEach(({ selector, stagger, scale }) => {
+      const items = document.querySelectorAll(selector);
+      items.forEach((item, index) => {
+        item.classList.add('reveal-on-scroll');
+        if (scale) item.classList.add('reveal-scale');
+        item.style.transitionDelay = `${index * stagger}ms`;
+      });
+    });
+
+    // 3. Direction-Aware Cinematic IntersectionObserver (Slide-Up on scroll down, Slide-Down on scroll up)
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target;
+          const rect = entry.boundingClientRect;
+          const vh = window.innerHeight || document.documentElement.clientHeight;
+
+          if (entry.isIntersecting) {
+            // Element is entering into the viewport
+            if (scrollDir === 'up' && rect.top < vh * 0.45) {
+              // Scrolled up: enter from top (slide-down)
+              el.classList.add('reveal-from-top');
+            } else if (scrollDir === 'down' && rect.bottom > vh * 0.55) {
+              // Scrolled down: enter from bottom (slide-up)
+              el.classList.remove('reveal-from-top');
+            }
+            el.classList.add('is-revealed');
+          } else {
+            // Element has left the viewport.
+            // Safety buffer of 60px: only reset when safely outside the screen so user NEVER sees the change
+            if (rect.bottom < -60) {
+              // Exited above screen: user scrolled down past it.
+              // Prepare for when user scrolls back UP (will enter from top)
+              el.classList.remove('is-revealed');
+              el.classList.add('reveal-from-top');
+            } else if (rect.top > vh + 60) {
+              // Exited below screen: user scrolled up past it.
+              // Prepare for when user scrolls back DOWN (will enter from bottom)
+              el.classList.remove('is-revealed');
+              el.classList.remove('reveal-from-top');
+            }
+          }
+        });
+      },
+      {
+        threshold: [0, 0.08, 0.2],
+        rootMargin: '10px 0px 10px 0px'
+      }
+    );
+
+    document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+      revealObserver.observe(el);
+    });
+
+    // Automatically reveal elements that are already within the viewport on initial page load
+    const initialReveal = () => {
+      document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const viewportH = window.innerHeight || document.documentElement.clientHeight;
+        if (rect.top < viewportH && rect.bottom > 0) {
+          el.classList.add('is-revealed');
+        }
+      });
+    };
+    requestAnimationFrame(initialReveal);
+    setTimeout(initialReveal, 120);
+  }
+
+  // Initialize scroll reveals
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollReveals);
+  } else {
+    initScrollReveals();
+  }
 
 })();
 
