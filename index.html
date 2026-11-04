@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="day">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICETIS-2026 | International Conference on Emerging Technologies and Innovative Solutions | Arya College Jaipur</title>
+  <meta name="description" content="ICETIS-2026 — International Conference on Emerging Technologies and Innovative Solutions, December 18–19, 2026 at Arya College of Engineering & Technology, Jaipur, India. Technically sponsored and indexed in Scopus / Springer / IEEE.">
+  <meta name="keywords" content="ICETIS 2026, Arya College of Engineering, AIET Jaipur, Arya Group of Colleges, International Conference, AI, Machine Learning, IoT, Cloud Computing, Scopus, Springer, IEEE">
+  <meta name="author" content="Arya College of Engineering & Technology, Jaipur">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23D4AF37'/><text x='50%' y='68%' font-size='55' font-family='sans-serif' font-weight='bold' fill='%23171717' text-anchor='middle'>A</text></svg>">
+
+  <!-- Google Fonts: Instrument Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =======================================================================
+       HERO SECTION — IMMERSIVE LUMEN ROOF DAY/NIGHT VISUAL EXPERIENCE
+       ======================================================================= -->
+  <main class="hero" id="home">
+    
+    <!-- Layer 1: Atmospheric Sky (Day & Night Crossfade) -->
+    <div class="layer sky" aria-hidden="true">
+      <div class="sky-bg sky-day"></div>
+      <div class="sky-bg sky-night"></div>
+      <div class="sky-stars"></div>
+    </div>
+
+    <!-- Layer 2: Moving Campus Photograph (Exact Arya College Photo) -->
+    <div class="layer campus-stage" aria-label="Arya College of Engineering Campus">
+      <!-- Day Mode Set -->
+      <div class="set is-on" id="setDay">
+        <img class="campus-img" src="assets/images/arya-campus.jpg" alt="Arya College of Engineering Main Campus, Jaipur — Day Sunlight">
+        <div class="day-sun-glow"></div>
+      </div>
+      <!-- Night Mode Set (Same Campus Photograph with Atmospheric Night Lighting) -->
+      <div class="set" id="setNight">
+        <img class="campus-img" src="assets/images/arya-campus.jpg" alt="Arya College of Engineering Main Campus, Jaipur — Night Illumination">
+        <div class="night-lighting-overlay"></div>
+      </div>
+    </div>
+
+    <!-- Layer 3: Tilt-Shift Photographic Depth Blur -->
+    <div class="tilt" aria-hidden="true"></div>
+
+    <!-- Layer 4: WebGL2 Procedural Rolling Fog Canvas -->
+    <canvas id="fog" aria-hidden="true"></canvas>
+
+    <!-- Layer 5: Hero UI Layer -->
+    <div class="hero-ui">
+      
+      <!-- Top Navigation Header -->
+      <header class="hero-bar">
+        <a href="#home" class="brand-badge" aria-label="ICETIS-2026 Arya College Jaipur">
+          <div class="brand-logo-icon">A</div>
+          <div class="brand-info">
+            <span class="brand-acronym">ICETIS-2026</span>
+            <span class="brand-college">Arya College of Engineering, Jaipur</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#tracks">Tracks</a></li>
+          <li><a href="#dates">Dates</a></li>
+          <li><a href="#guidelines">Guidelines</a></li>
+          <li><a href="#registration">Registration</a></li>
+          <li><a href="#publication">Publication</a></li>
+          <li><a href="#speakers">Speakers</a></li>
+          <li><a href="#venue">Venue</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="bar-actions">
+          <a href="#guidelines" class="btn-header-ghost" data-open-modal="submit">Submit Paper</a>
+          <a href="#registration" class="btn-header-cta" data-open-modal="register">Register Now</a>
+          <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Open mobile menu">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Center Hero Headline & Details -->
+      <div class="hero-center">
+        <div class="conference-tag">
+          <span class="tag-dot"></span>
+          <span>International Conference on Emerging Technologies and Innovative Solutions</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="title-top">ICETIS-2026</span>
+          <span class="title-sub">Advancing Global Innovation & Intelligent Technologies</span>
+        </h1>
+
+        <div class="hero-venue-banner">
+          <span>📅 <b>December 18–19, 2026</b></span>
+          <span>•</span>
+          <span>📍 <b>Arya College of Engineering & Technology, Jaipur</b></span>
+          <span>•</span>
+          <span>🏆 <b>Proceedings in Scopus & Springer</b></span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#registration" class="btn-hero-primary" data-open-modal="register">
+            <span>Register Now</span>
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a href="#guidelines" class="btn-hero-secondary" data-open-modal="submit">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <span>Submit Your Paper</span>
+          </a>
+          <a href="#about" class="btn-hero-explore">
+            <span>Explore Conference</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Glassmorphism Day/Night Toggle (Lumen Roof Design) -->
+      <div class="hero-dock">
+        <div class="dock-toggle" role="group" aria-label="Campus Theme Controller">
+          <button id="btnDay" class="toggle-opt" aria-pressed="true">
+            <div class="toggle-header">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              <b>Day Mode</b>
+            </div>
+            <small>Natural Daylight • Campus Sunshine</small>
+          </button>
+          
+          <button id="btnNight" class="toggle-opt" aria-pressed="false">
+            <div class="toggle-header">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+              <b>Night Mode</b>
+            </div>
+            <small>Illuminated Campus • Evening Glow</small>
+          </button>
+        </div>
+        <p class="dock-caption">Experience Arya College of Engineering & Technology in dynamic daylight and evening illumination.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- =======================================================================
+       STICKY SECONDARY NAVBAR (WHEN SCROLLED)
+       ======================================================================= -->
+  <nav class="sticky-nav" id="stickyNav" aria-label="Sticky Navigation">
+    <div class="container sticky-nav-inner">
+      <a href="#home" class="sticky-brand">
+        <div class="brand-logo-icon" style="width:30px;height:30px;font-size:14px;">A</div>
+        <span>ICETIS-2026</span>
+      </a>
+
+      <ul class="sticky-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#tracks">Tracks</a></li>
+        <li><a href="#dates">Dates</a></li>
+        <li><a href="#guidelines">Guidelines</a></li>
+        <li><a href="#registration">Registration</a></li>
+        <li><a href="#publication">Publication</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="sticky-actions">
+        <button class="theme-switch-pill" id="stickyThemeToggle" aria-label="Toggle Day and Night Theme">
+          <span id="stickyThemeIcon">🌙</span>
+          <span id="stickyThemeLabel">Night Mode</span>
+        </button>
+        <a href="#registration" class="btn-header-cta" style="padding:7px 16px;font-size:12.5px;" data-open-modal="register">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =======================================================================
+       SECTION 1: ABOUT THE CONFERENCE & ARYA COLLEGE
+       ======================================================================= -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Welcome to ICETIS-2026</span>
+        <h2 class="section-title">Fostering Breakthroughs in Technology & Innovation</h2>
+        <p class="section-subtitle">A premier global forum connecting scientists, academicians, industry visionaries, and researchers to deliberate on next-generation computing, intelligent autonomous systems, and sustainable technological solutions.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-content">
+          <h3>Pioneering Interdisciplinary Research in the Pink City</h3>
+          <p>The <b>1st International Conference on Emerging Technologies and Innovative Solutions (ICETIS-2026)</b> serves as an intellectual catalyst addressing crucial paradigm shifts in computational intelligence, cybersecurity, smart cyber-physical systems, and green technologies.</p>
+          <p>Organized in hybrid mode (both in-person physical sessions and virtual participation for overseas scholars), the conference offers inspiring keynote addresses, rigorous peer-reviewed technical paper presentations, hands-on workshops, and interactive panel sessions.</p>
+
+          <div class="about-features">
+            <div class="about-feature-item">
+              <div class="feature-icon-box">🏆</div>
+              <div>
+                <div class="feature-title">Scopus & Springer Indexing</div>
+                <div class="feature-desc">All accepted, registered, and presented manuscripts will be submitted for indexing in Scopus and Web of Science.</div>
+              </div>
+            </div>
+
+            <div class="about-feature-item">
+              <div class="feature-icon-box">🌐</div>
+              <div>
+                <div class="feature-title">Hybrid Global Presentation</div>
+                <div class="feature-desc">Interactive oral presentations with physical conference halls and virtual participation streams.</div>
+              </div>
+            </div>
+
+            <div class="about-feature-item">
+              <div class="feature-icon-box">🎖️</div>
+              <div>
+                <div class="feature-title">Best Paper Awards</div>
+                <div class="feature-desc">Prestigious awards and cash grants for exceptional research contributions across all technical tracks.</div>
+              </div>
+            </div>
+
+            <div class="about-feature-item">
+              <div class="feature-icon-box">🤝</div>
+              <div>
+                <div class="feature-title">Industry Collaboration</div>
+                <div class="feature-desc">Strategic networking with tech leaders, research labs, startup founders, and global patent consultants.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Host Institution Card: Arya College AIET -->
+        <div class="college-card">
+          <div class="college-card-media">
+            <img src="assets/images/arya-campus.jpg" alt="Arya Institute of Engineering & Technology Jaipur Main Campus">
+            <span class="college-badge-float">Host Institution • Estd. 2000</span>
+          </div>
+          <div class="college-card-body">
+            <h4>Arya College of Engineering & Technology</h4>
+            <p>Arya Institute of Engineering & Technology (AIET), Jaipur is the flagship institution of the Arya Group of Colleges. Accredited with NAAC A+ and affiliated with Rajasthan Technical University (RTU), AIET is renowned for its state-of-the-art incubation hubs, robotics centers, and 25-acre lush green campus situated at Kukas, Jaipur.</p>
+            
+            <div class="college-stats-row">
+              <div class="c-stat-box">
+                <div class="c-stat-number">25+</div>
+                <div class="c-stat-label">Years of Excellence</div>
+              </div>
+              <div class="c-stat-box">
+                <div class="c-stat-number">NAAC A+</div>
+                <div class="c-stat-label">Accreditation</div>
+              </div>
+              <div class="c-stat-box">
+                <div class="c-stat-number">25,000+</div>
+                <div class="c-stat-label">Global Alumni</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 2: CONFERENCE TRACKS
+       ======================================================================= -->
+  <section id="tracks" class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Technical Scope</span>
+        <h2 class="section-title">Conference Technical Tracks</h2>
+        <p class="section-subtitle">ICETIS-2026 invites prospective authors to submit original, unpublished research papers across six major cutting-edge technical tracks.</p>
+      </div>
+
+      <div class="tracks-grid">
+        <!-- Track 1 -->
+        <div class="track-card">
+          <div class="track-header">
+            <div class="track-icon-wrapper">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <div class="track-number">Track 01</div>
+              <h3 class="track-title">Artificial Intelligence, GenAI & Robotics</h3>
+            </div>
+          </div>
+          <ul class="track-topics-list">
+            <li>Large Language Models & Foundation AI</li>
+            <li>Deep Learning, Computer Vision & Audio Processing</li>
+            <li>Autonomous Mobile Robots & Drone Navigation</li>
+            <li>Explainable AI (XAI) & Ethical Machine Intelligence</li>
+            <li>Cognitive Computing & Human-Robot Interaction</li>
+          </ul>
+          <div class="track-footer">
+            <span class="track-meta">Chairs: Dr. Michael Vance & Dr. S. K. Gupta</span>
+            <a href="#guidelines" class="track-btn-submit" data-open-modal="submit">Submit to Track 1 →</a>
+          </div>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="track-card">
+          <div class="track-header">
+            <div class="track-icon-wrapper">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+            </div>
+            <div>
+              <div class="track-number">Track 02</div>
+              <h3 class="track-title">Cyber-Physical Systems & Smart IoT</h3>
+            </div>
+          </div>
+          <ul class="track-topics-list">
+            <li>Industrial Internet of Things (IIoT 5.0)</li>
+            <li>Smart Urban Mobility & Autonomous Vehicles</li>
+            <li>Wireless Sensor Networks & Embedded Edge Nodes</li>
+            <li>Digital Twin Modeling for Smart Infrastructure</li>
+            <li>Real-time Remote Sensing & Telemetry</li>
+          </ul>
+          <div class="track-footer">
+            <span class="track-meta">Chairs: Dr. Elena Rostova & Dr. R. Verma</span>
+            <a href="#guidelines" class="track-btn-submit" data-open-modal="submit">Submit to Track 2 →</a>
+          </div>
+        </div>
+
+        <!-- Track 3 -->
+        <div class="track-card">
+          <div class="track-header">
+            <div class="track-icon-wrapper">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <div>
+              <div class="track-number">Track 03</div>
+              <h3 class="track-title">Cloud, Quantum & Advanced Cybersecurity</h3>
+            </div>
+          </div>
+          <ul class="track-topics-list">
+            <li>Post-Quantum Cryptography & Zero-Trust Architecture</li>
+            <li>Cloud-Native Orchestration & Serverless Computing</li>
+            <li>Blockchain, Smart Contracts & Distributed Ledgers</li>
+            <li>AI-Driven Threat Intelligence & Malware Analysis</li>
+            <li>Critical Infrastructure Defense & Privacy Preserving Systems</li>
+          </ul>
+          <div class="track-footer">
+            <span class="track-meta">Chairs: Dr. P. K. Sharma & Dr. Nathan White</span>
+            <a href="#guidelines" class="track-btn-submit" data-open-modal="submit">Submit to Track 3 →</a>
+          </div>
+        </div>
+
+        <!-- Track 4 -->
+        <div class="track-card">
+          <div class="track-header">
+            <div class="track-icon-wrapper">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <div class="track-number">Track 04</div>
+              <h3 class="track-title">Big Data Analytics & Health Informatics</h3>
+            </div>
+          </div>
+          <ul class="track-topics-list">
+            <li>Predictive Healthcare Analytics & Disease Diagnosis</li>
+            <li>Genomic Data Mining & Computational Biology</li>
+            <li>Streaming Big Data Architectures & Fast Query Engines</li>
+            <li>Wearable Medical Devices & Telemedicine Systems</li>
+            <li>Federated Learning for Private Medical Records</li>
+          </ul>
+          <div class="track-footer">
+            <span class="track-meta">Chairs: Dr. Sunita Meena & Dr. David Zhao</span>
+            <a href="#guidelines" class="track-btn-submit" data-open-modal="submit">Submit to Track 4 →</a>
+          </div>
+        </div>
+
+        <!-- Track 5 -->
+        <div class="track-card">
+          <div class="track-header">
+            <div class="track-icon-wrapper">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div>
+              <div class="track-number">Track 05</div>
+              <h3 class="track-title">Green Energy, Smart Grids & EV Systems</h3>
+            </div>
+          </div>
+          <ul class="track-topics-list">
+            <li>Electric Vehicle Powertrains & Battery Management (BMS)</li>
+            <li>Solar PV Integration & AI-Assisted Smart Grids</li>
+            <li>Energy Harvesting & Low-Power Microelectronics</li>
+            <li>Decarbonized Industrial Manufacturing & Green Computing</li>
+            <li>Solid-State Energy Storage & Supercapacitors</li>
+          </ul>
+          <div class="track-footer">
+            <span class="track-meta">Chairs: Prof. Rajesh Sharma & Dr. Amit Mittal</span>
+            <a href="#guidelines" class="track-btn-submit" data-open-modal="submit">Submit to Track 5 →</a>
+          </div>
+        </div>
+
+        <!-- Track 6 -->
+        <div class="track-card">
+          <div class="track-header">
+            <div class="track-icon-wrapper">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+            </div>
+            <div>
+              <div class="track-number">Track 06</div>
+              <h3 class="track-title">VLSI, 5G/6G & Optical Communications</h3>
+            </div>
+          </div>
+          <ul class="track-topics-list">
+            <li>Beyond 5G & Terahertz 6G Wireless Architectures</li>
+            <li>Low-Power CMOS & Sub-Micron VLSI Circuit Design</li>
+            <li>Optical Interconnects & Silicon Photonics</li>
+            <li>MIMO Beamforming & Reconfigurable Intelligent Surfaces</li>
+            <li>RF Microstrip Antennas & Satellite Communication</li>
+          </ul>
+          <div class="track-footer">
+            <span class="track-meta">Chairs: Dr. Akhilesh Kumar & Dr. Hiroshi Sato</span>
+            <a href="#guidelines" class="track-btn-submit" data-open-modal="submit">Submit to Track 6 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 3: IMPORTANT DATES & TIMELINE
+       ======================================================================= -->
+  <section id="dates">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Mark Your Calendar</span>
+        <h2 class="section-title">Important Deadlines & Milestones</h2>
+        <p class="section-subtitle">Please adhere to the strict conference submission and registration timelines to ensure inclusion in Scopus/Springer proceedings.</p>
+      </div>
+
+      <div class="dates-wrapper">
+        <!-- Live Countdown Timer -->
+        <div class="countdown-box">
+          <h3>Conference Commences In</h3>
+          <p>Arya College of Engineering & Technology, Kukas, Jaipur</p>
+
+          <div class="timer-grid">
+            <div class="timer-unit">
+              <div class="timer-val" id="days">00</div>
+              <div class="timer-label">Days</div>
+            </div>
+            <div class="timer-unit">
+              <div class="timer-val" id="hours">00</div>
+              <div class="timer-label">Hours</div>
+            </div>
+            <div class="timer-unit">
+              <div class="timer-val" id="minutes">00</div>
+              <div class="timer-label">Minutes</div>
+            </div>
+            <div class="timer-unit">
+              <div class="timer-val" id="seconds">00</div>
+              <div class="timer-label">Seconds</div>
+            </div>
+          </div>
+
+          <div class="dates-cta-group">
+            <a href="#guidelines" class="btn-portal-submit" style="justify-content:center;" data-open-modal="submit">Submit Your Manuscript Now</a>
+            <a href="#registration" class="btn-download-template" style="justify-content:center;" data-open-modal="register">Register for Conference</a>
+          </div>
+        </div>
+
+        <!-- Timeline Node List -->
+        <div class="timeline-list">
+          <div class="timeline-node">
+            <div class="timeline-indicator"></div>
+            <div class="timeline-card">
+              <div class="t-info">
+                <h5>Paper Submission Opens</h5>
+                <span>Online submission portal begins accepting manuscripts</span>
+              </div>
+              <span class="t-badge">May 15, 2026</span>
+            </div>
+          </div>
+
+          <div class="timeline-node highlight">
+            <div class="timeline-indicator"></div>
+            <div class="timeline-card">
+              <div class="t-info">
+                <h5>Full Paper Submission Deadline</h5>
+                <span>Last date to submit 6–8 page original research paper</span>
+              </div>
+              <span class="t-badge active">September 30, 2026</span>
+            </div>
+          </div>
+
+          <div class="timeline-node">
+            <div class="timeline-indicator"></div>
+            <div class="timeline-card">
+              <div class="t-info">
+                <h5>Acceptance Notification</h5>
+                <span>Double-blind peer review outcomes communicated to authors</span>
+              </div>
+              <span class="t-badge">October 30, 2026</span>
+            </div>
+          </div>
+
+          <div class="timeline-node">
+            <div class="timeline-indicator"></div>
+            <div class="timeline-card">
+              <div class="t-info">
+                <h5>Camera-Ready Paper & Early Bird Registration</h5>
+                <span>Final manuscript submission, copyright form & author fee</span>
+              </div>
+              <span class="t-badge">November 20, 2026</span>
+            </div>
+          </div>
+
+          <div class="timeline-node highlight">
+            <div class="timeline-indicator"></div>
+            <div class="timeline-card">
+              <div class="t-info">
+                <h5>Conference Inauguration & Sessions</h5>
+                <span>Keynote speeches, oral presentation tracks & banquet dinner</span>
+              </div>
+              <span class="t-badge active">Dec 18–19, 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 4: CALL FOR PAPERS & SUBMISSION GUIDELINES
+       ======================================================================= -->
+  <section id="guidelines" class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Author Guidelines</span>
+        <h2 class="section-title">Paper Submission Guidelines</h2>
+        <p class="section-subtitle">Authors are cordially invited to submit original, unpublished research papers demonstrating technical novelty and empirical validation.</p>
+      </div>
+
+      <div class="guidelines-grid">
+        <div class="guide-card">
+          <div class="guide-icon-pill">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h4>Paper Length & Template</h4>
+          <p>Papers must strictly follow the standard IEEE / Springer double-column conference format.</p>
+          <ul>
+            <li>Length: 6 to 8 full pages (inclusive of references)</li>
+            <li>Extra pages: Max 2 pages allowed with supplementary charge</li>
+            <li>Format: PDF submission only via portal</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-icon-pill">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h4>Plagiarism & Ethics</h4>
+          <p>All submissions undergo mandatory similarity screening via Turnitin / CrossCheck prior to peer review.</p>
+          <ul>
+            <li>Similarity Index must be strictly below 15%</li>
+            <li>No single source similarity exceeding 4%</li>
+            <li>Self-plagiarism and dual submission strictly prohibited</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <div class="guide-icon-pill">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          </div>
+          <h4>Double-Blind Review</h4>
+          <p>ICETIS-2026 follows an uncompromising double-blind peer review methodology.</p>
+          <ul>
+            <li>Omit author names, affiliations, and emails in initial PDF</li>
+            <li>Every paper evaluated by at least 2 independent experts</li>
+            <li>Review criteria: novelty, methodology, rigor, readability</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Action Banner -->
+      <div class="submission-banner">
+        <div class="sub-banner-text">
+          <h4>Ready to Submit Your Manuscript?</h4>
+          <p>Download official formatting templates or proceed directly to the submission portal.</p>
+        </div>
+        <div class="sub-banner-buttons">
+          <button class="btn-download-template" aria-label="Download Word & LaTeX Templates">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            <span>Download Template (ZIP)</span>
+          </button>
+          <a href="#submit" class="btn-portal-submit" data-open-modal="submit">
+            <span>Submit via Portal (CMT)</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 5: REGISTRATION DETAILS & PRICING
+       ======================================================================= -->
+  <section id="registration">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Conference Registration</span>
+        <h2 class="section-title">Registration Fees & Categories</h2>
+        <p class="section-subtitle">At least one author of each accepted paper must register at the Author rate by November 20, 2026 to ensure publication in proceedings.</p>
+      </div>
+
+      <!-- Currency Switcher -->
+      <div class="reg-controls">
+        <div class="currency-toggle" role="group" aria-label="Select Currency">
+          <button class="currency-btn active" id="btnInr">INR (₹) Indian</button>
+          <button class="currency-btn" id="btnUsd">USD ($) International</button>
+        </div>
+      </div>
+
+      <!-- Pricing Cards Grid -->
+      <div class="pricing-cards-grid">
+        <!-- Student / Scholar -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h4>Student / Scholar</h4>
+            <p>UG, PG, and PhD Research Scholars with valid student ID</p>
+          </div>
+          <div class="price-display">
+            <span class="price-currency">₹</span>
+            <span class="price-amount" data-inr="4,500" data-usd="150">4,500</span>
+            <span class="price-period">/ paper</span>
+          </div>
+          <span class="early-bird-tag">Early Bird Fee (Reg: ₹5,500 / $200)</span>
+          <ul class="pricing-features">
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Full Technical Session Access</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Scopus/Springer Proceeding Inclusion</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Presentation Certificate</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Conference Kit & Meals</li>
+          </ul>
+          <button class="btn-card-register" data-open-modal="register">Register as Student</button>
+        </div>
+
+        <!-- Academician / Faculty (Featured) -->
+        <div class="pricing-card featured">
+          <span class="pricing-badge-popular">Most Popular</span>
+          <div class="pricing-header">
+            <h4>Academician / Faculty</h4>
+            <p>Faculty members, scientists & university professors</p>
+          </div>
+          <div class="price-display">
+            <span class="price-currency">₹</span>
+            <span class="price-amount" data-inr="6,000" data-usd="250">6,000</span>
+            <span class="price-period">/ paper</span>
+          </div>
+          <span class="early-bird-tag">Early Bird Fee (Reg: ₹7,500 / $300)</span>
+          <ul class="pricing-features">
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Full Technical & Keynote Access</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Scopus/Springer Proceeding Inclusion</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Author Presentation Certificate</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Deluxe Kit, Lunch & Gala Banquet</li>
+          </ul>
+          <button class="btn-card-register" data-open-modal="register">Register as Faculty</button>
+        </div>
+
+        <!-- Industry Delegate -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h4>Industry Delegate</h4>
+            <p>Corporate researchers, R&D labs, and startup engineers</p>
+          </div>
+          <div class="price-display">
+            <span class="price-currency">₹</span>
+            <span class="price-amount" data-inr="8,500" data-usd="350">8,500</span>
+            <span class="price-period">/ delegate</span>
+          </div>
+          <span class="early-bird-tag">Early Bird Fee (Reg: ₹10,000 / $400)</span>
+          <ul class="pricing-features">
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> VIP Access to All Sessions</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Proceedings & Citation Access</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Industry Networking Lounge Access</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Premium Kit & Banquet Dinner</li>
+          </ul>
+          <button class="btn-card-register" data-open-modal="register">Register as Industry</button>
+        </div>
+
+        <!-- Attendee / Listener -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h4>Non-Presenting Attendee</h4>
+            <p>Listeners, co-authors & visitors without paper presentation</p>
+          </div>
+          <div class="price-display">
+            <span class="price-currency">₹</span>
+            <span class="price-amount" data-inr="2,500" data-usd="100">2,500</span>
+            <span class="price-period">/ attendee</span>
+          </div>
+          <span class="early-bird-tag">Early Bird Fee (Reg: ₹3,000 / $120)</span>
+          <ul class="pricing-features">
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Entry to All Keynote Presentations</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Attendee Certificate of Participation</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Daily Refreshments & Lunches</li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Conference Delegate Bag</li>
+          </ul>
+          <button class="btn-card-register" data-open-modal="register">Register as Attendee</button>
+        </div>
+      </div>
+
+      <!-- Payment & Bank Details -->
+      <div class="reg-details-grid">
+        <div class="detail-box">
+          <h4>
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg>
+            <span>Official Bank Payment Details</span>
+          </h4>
+          <table class="bank-info-table">
+            <tr>
+              <td>Account Name:</td>
+              <td>Arya Institute of Engg. & Technology (ICETIS)</td>
+            </tr>
+            <tr>
+              <td>Bank Name:</td>
+              <td>State Bank of India (SBI)</td>
+            </tr>
+            <tr>
+              <td>Account Number:</td>
+              <td>384920194829</td>
+            </tr>
+            <tr>
+              <td>IFSC Code:</td>
+              <td>SBIN0031824</td>
+            </tr>
+            <tr>
+              <td>Branch:</td>
+              <td>Kukas Industrial Area, Jaipur, Rajasthan</td>
+            </tr>
+            <tr>
+              <td>Swift Code (Overseas):</td>
+              <td>SBININBB219</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="detail-box">
+          <h4>
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>Registration Inclusions & Notes</span>
+          </h4>
+          <p style="font-size:14px;color:var(--text-muted);line-height:1.6;margin-bottom:12px;">Registration fee includes admission to all plenary keynotes, concurrent technical sessions, conference kit with proceeding USB/e-book, official certificate of presentation, morning/evening high tea, hot buffet lunches on both conference days, and the grand conference banquet dinner.</p>
+          <p style="font-size:13.5px;color:var(--text-light);line-height:1.5;">* In case of multiple papers by the same author, a 20% discount applies on the second paper registration. At least one registration is mandatory per accepted manuscript.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 6: PUBLICATION & INDEXING
+       ======================================================================= -->
+  <section id="publication" class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Indexed Proceedings</span>
+        <h2 class="section-title">Publication & Indexing Partners</h2>
+        <p class="section-subtitle">High-quality, peer-reviewed research papers will be published in official conference proceedings and submitted to premier global indexing agencies.</p>
+      </div>
+
+      <div class="pub-partners-grid">
+        <div class="pub-partner-card">
+          <div class="pub-icon">📚</div>
+          <h4>Scopus (Elsevier)</h4>
+          <p>Accepted and presented manuscripts will be submitted for indexing in Elsevier's Scopus database.</p>
+        </div>
+
+        <div class="pub-partner-card">
+          <div class="pub-icon">🌐</div>
+          <h4>Web of Science (Clarivate)</h4>
+          <p>Conference proceedings submitted for inclusion in the Conference Proceedings Citation Index (CPCI).</p>
+        </div>
+
+        <div class="pub-partner-card">
+          <div class="pub-icon">📑</div>
+          <h4>Springer CCIS Series</h4>
+          <p>Proceedings published in Springer Communications in Computer and Information Science (CCIS).</p>
+        </div>
+
+        <div class="pub-partner-card">
+          <div class="pub-icon">⚡</div>
+          <h4>Partner SCI Journals</h4>
+          <p>Top 15% extended manuscripts will be recommended for fast-track review in Scopus / SCI Q1/Q2 journals.</p>
+        </div>
+      </div>
+
+      <div class="pub-statement-box">
+        <div class="pub-statement-icon">🛡️</div>
+        <div class="pub-statement-text">
+          <p><b>Publication Guarantee & Review Ethics:</b> ICETIS-2026 adheres strictly to the Committee on Publication Ethics (COPE) guidelines. Every paper undergoes a rigorous double-blind peer review by at least two independent international experts. Plagiarism must remain below 15%.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 7: KEYNOTE SPEAKERS & COMMITTEE
+       ======================================================================= -->
+  <section id="speakers">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Eminent Dignitaries</span>
+        <h2 class="section-title">Keynote Speakers & Advisory Board</h2>
+        <p class="section-subtitle">Hear from distinguished global thought leaders at the forefront of artificial intelligence, cyber-physical systems, and sustainable technological engineering.</p>
+      </div>
+
+      <div class="speakers-grid">
+        <!-- Speaker 1 -->
+        <div class="speaker-card">
+          <div class="speaker-avatar-wrap">
+            <div class="speaker-avatar">MV</div>
+          </div>
+          <h4 class="speaker-name">Prof. (Dr.) Michael Vance</h4>
+          <div class="speaker-role">Professor of AI & Robotics</div>
+          <div class="speaker-org">Massachusetts Institute of Technology (MIT), USA</div>
+          <span class="speaker-topic-badge">Keynote: Autonomous GenAI Systems</span>
+        </div>
+
+        <!-- Speaker 2 -->
+        <div class="speaker-card">
+          <div class="speaker-avatar-wrap">
+            <div class="speaker-avatar">ER</div>
+          </div>
+          <h4 class="speaker-name">Dr. Elena Rostova</h4>
+          <div class="speaker-role">Principal Quantum Architect</div>
+          <div class="speaker-org">ETH Zürich, Switzerland</div>
+          <span class="speaker-topic-badge">Keynote: Post-Quantum Cryptography</span>
+        </div>
+
+        <!-- Speaker 3 -->
+        <div class="speaker-card">
+          <div class="speaker-avatar-wrap">
+            <div class="speaker-avatar">RS</div>
+          </div>
+          <h4 class="speaker-name">Prof. (Dr.) Rajesh Sharma</h4>
+          <div class="speaker-role">Head, Energy & Smart Grids</div>
+          <div class="speaker-org">Indian Institute of Technology (IIT) Delhi</div>
+          <span class="speaker-topic-badge">Keynote: Green Microgrid Optimization</span>
+        </div>
+
+        <!-- Speaker 4 -->
+        <div class="speaker-card">
+          <div class="speaker-avatar-wrap">
+            <div class="speaker-avatar">SM</div>
+          </div>
+          <h4 class="speaker-name">Dr. Sunita Meena</h4>
+          <div class="speaker-role">Director of R&D & Incubation</div>
+          <div class="speaker-org">Arya Group of Colleges, Jaipur, India</div>
+          <span class="speaker-topic-badge">Keynote: Next-Gen Biomedical AI</span>
+        </div>
+      </div>
+
+      <!-- Organizing Committee Leadership -->
+      <div class="committee-table-wrap" id="committee">
+        <h4 style="font-size:22px;font-weight:700;color:var(--text-main);margin-bottom:24px;text-align:center;">Organizing Committee Leadership</h4>
+        <div class="comm-grid">
+          <div class="comm-group">
+            <h5>Chief Patrons</h5>
+            <div class="comm-member-item">
+              <div class="comm-member-name">Er. Anurag Agarwal</div>
+              <div class="comm-member-desc">Chairman, Arya Group of Colleges, Jaipur</div>
+            </div>
+            <div class="comm-member-item">
+              <div class="comm-member-name">Dr. Puja Agarwal</div>
+              <div class="comm-member-desc">Vice Chairperson, Arya Group of Colleges, Jaipur</div>
+            </div>
+          </div>
+
+          <div class="comm-group">
+            <h5>General Chairs</h5>
+            <div class="comm-member-item">
+              <div class="comm-member-name">Prof. (Dr.) Surendra Kumar</div>
+              <div class="comm-member-desc">Principal & Director, AIET Jaipur</div>
+            </div>
+            <div class="comm-member-item">
+              <div class="comm-member-name">Prof. (Dr.) David Zhao</div>
+              <div class="comm-member-desc">Senior IEEE Fellow, NTU Singapore</div>
+            </div>
+          </div>
+
+          <div class="comm-group">
+            <h5>Organizing Secretaries</h5>
+            <div class="comm-member-item">
+              <div class="comm-member-name">Dr. Akhilesh Kumar</div>
+              <div class="comm-member-desc">Dean Academics & Research, Arya College Jaipur</div>
+            </div>
+            <div class="comm-member-item">
+              <div class="comm-member-name">Dr. Prabhat Sharma</div>
+              <div class="comm-member-desc">Head, Department of Computer Science & AI</div>
+            </div>
+          </div>
+
+          <div class="comm-group">
+            <h5>Technical Program Chairs</h5>
+            <div class="comm-member-item">
+              <div class="comm-member-name">Dr. Nathan White</div>
+              <div class="comm-member-desc">University of Cambridge, UK</div>
+            </div>
+            <div class="comm-member-item">
+              <div class="comm-member-name">Dr. Hiroshi Sato</div>
+              <div class="comm-member-desc">Tokyo Institute of Technology, Japan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 8: VENUE & JAIPUR HERITAGE TOUR
+       ======================================================================= -->
+  <section id="venue" class="section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Conference Destination</span>
+        <h2 class="section-title">Venue & Jaipur Heritage Exploration</h2>
+        <p class="section-subtitle">Experience the vibrant hospitality and royal legacy of Jaipur, Rajasthan — India's famed "Pink City" and a UNESCO World Heritage cultural wonder.</p>
+      </div>
+
+      <div class="venue-grid">
+        <div class="venue-card-main">
+          <div class="venue-img-wrap">
+            <img src="assets/images/arya-campus.jpg" alt="Arya College of Engineering & Technology Jaipur Campus Entrance">
+            <div class="venue-badge-overlay">Arya College Main Campus • Kukas, Jaipur</div>
+          </div>
+          <div class="venue-card-body">
+            <h4>Arya Institute of Engineering & Technology (AIET)</h4>
+            <p>Located on the Delhi-Jaipur National Highway (NH-48), Arya College boasts world-class auditorium halls, air-conditioned seminar complexes, high-speed Wi-Fi research lounges, and green botanical gardens.</p>
+            <div class="venue-connectivity-list">
+              <div class="connect-item">
+                <b>✈️ Jaipur Airport (JAI)</b>
+                <span>Approx. 35 km via NH-48 (taxis & cabs available 24/7)</span>
+              </div>
+              <div class="connect-item">
+                <b>🚆 Jaipur Railway Station</b>
+                <span>Approx. 25 km from the main junction (direct bus/cab)</span>
+              </div>
+              <div class="connect-item">
+                <b>🚗 National Highway 48</b>
+                <span>Prime location on SP-40, RIICO Industrial Area, Kukas</span>
+              </div>
+              <div class="connect-item">
+                <b>🏨 Hotel Accommodation</b>
+                <span>Over 15 partner luxury & budget hotels within 5 km radius</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jaipur Guide Box -->
+        <div class="jaipur-guide-box">
+          <h4>Explore Jaipur's Royal Marvels</h4>
+          <p>Delegates and accompanying family members can immerse themselves in Jaipur's royal palaces, ancient astronomical observatories, and vibrant handicrafts.</p>
+
+          <div class="attractions-grid">
+            <div class="attraction-pill">
+              <span class="attraction-icon">🏰</span>
+              <div>
+                <div class="attraction-name">Amer Fort</div>
+                <div class="attraction-dist">12 km from Arya Campus</div>
+              </div>
+            </div>
+
+            <div class="attraction-pill">
+              <span class="attraction-icon">🌊</span>
+              <div>
+                <div class="attraction-name">Jal Mahal</div>
+                <div class="attraction-dist">16 km (Water Palace)</div>
+              </div>
+            </div>
+
+            <div class="attraction-pill">
+              <span class="attraction-icon">🏛️</span>
+              <div>
+                <div class="attraction-name">Hawa Mahal</div>
+                <div class="attraction-dist">21 km (Palace of Winds)</div>
+              </div>
+            </div>
+
+            <div class="attraction-pill">
+              <span class="attraction-icon">🔭</span>
+              <div>
+                <div class="attraction-name">Jantar Mantar</div>
+                <div class="attraction-dist">21 km (UNESCO Observatory)</div>
+              </div>
+            </div>
+
+            <div class="attraction-pill">
+              <span class="attraction-icon">🐅</span>
+              <div>
+                <div class="attraction-name">Nahargarh Fort</div>
+                <div class="attraction-dist">Panoramic city views</div>
+              </div>
+            </div>
+
+            <div class="attraction-pill">
+              <span class="attraction-icon">🛍️</span>
+              <div>
+                <div class="attraction-name">Johari Bazaar</div>
+                <div class="attraction-dist">World-famous gems & textiles</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SECTION 9: CONTACT INFORMATION & INQUIRY FORM
+       ======================================================================= -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Get in Touch</span>
+        <h2 class="section-title">Contact & Helpdesk Support</h2>
+        <p class="section-subtitle">Have questions regarding paper submission, registration, or accommodation? Our organizing secretariat is here to help.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-col">
+          <div class="contact-card-item">
+            <div class="contact-icon-box">📍</div>
+            <div>
+              <h5>Conference Venue Address</h5>
+              <p>Arya Institute of Engineering & Technology (AIET)<br>SP-40, RIICO Industrial Area, Kukas, Jaipur, Rajasthan 302028, India</p>
+            </div>
+          </div>
+
+          <div class="contact-card-item">
+            <div class="contact-icon-box">✉️</div>
+            <div>
+              <h5>Official Correspondence Emails</h5>
+              <p><a href="mailto:icetis2026@aryacollege.in">icetis2026@aryacollege.in</a><br><a href="mailto:convener.icetis@aryacollege.in">convener.icetis@aryacollege.in</a></p>
+            </div>
+          </div>
+
+          <div class="contact-card-item">
+            <div class="contact-icon-box">📞</div>
+            <div>
+              <h5>Helpline & Telephone</h5>
+              <p>+91-141-6604555 / +91-98290-76123<br>Available Monday to Saturday (9:00 AM – 5:30 PM IST)</p>
+            </div>
+          </div>
+
+          <div class="contact-card-item">
+            <div class="contact-icon-box">🌐</div>
+            <div>
+              <h5>Official Institution Portal</h5>
+              <p><a href="https://www.aryacollege.in" target="_blank" rel="noopener">www.aryacollege.in</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Inquiry Form -->
+        <div class="contact-form-card">
+          <h4>Send a Message to Secretariat</h4>
+          <p>Please provide your details below and our organizing team will respond within 24 hours.</p>
+
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cName">Your Full Name *</label>
+                <input type="text" id="cName" class="form-control" placeholder="Dr. / Prof. / Mr. / Ms." required>
+              </div>
+              <div class="form-group">
+                <label for="cEmail">Email Address *</label>
+                <input type="email" id="cEmail" class="form-control" placeholder="name@university.edu" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cCategory">Inquiry Type *</label>
+                <select id="cCategory" class="form-control" required>
+                  <option value="submission">Paper Submission & Review</option>
+                  <option value="registration">Author / Delegate Registration</option>
+                  <option value="accommodation">Accommodation & Travel Assistance</option>
+                  <option value="sponsorship">Corporate Sponsorship & Exhibition</option>
+                  <option value="other">General Inquiries</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cPaperId">Paper ID (If already submitted)</label>
+                <input type="text" id="cPaperId" class="form-control" placeholder="e.g. ICETIS-2026-104">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cMsg">Your Message / Query *</label>
+              <textarea id="cMsg" class="form-control" placeholder="Describe your question or requirement in detail..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-form-submit">Submit Message to Secretariat</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       SITE FOOTER
+       ======================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <h4>ICETIS-2026</h4>
+          <p>International Conference on Emerging Technologies and Innovative Solutions organized by Arya Institute of Engineering & Technology (AIET), Jaipur, India.</p>
+          <p style="font-size:12.5px;color:#64748b;">December 18–19, 2026 • SP-40 RIICO Industrial Area Kukas Jaipur Rajasthan 302028</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Navigation</h5>
+          <ul class="footer-links-list">
+            <li><a href="#about">About ICETIS-2026</a></li>
+            <li><a href="#tracks">Technical Tracks</a></li>
+            <li><a href="#dates">Deadlines & Dates</a></li>
+            <li><a href="#guidelines">Author Guidelines</a></li>
+            <li><a href="#registration">Registration Fees</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Author Resources</h5>
+          <ul class="footer-links-list">
+            <li><a href="#guidelines" class="btn-download-template">Download Word Template</a></li>
+            <li><a href="#guidelines" class="btn-download-template">Download LaTeX Package</a></li>
+            <li><a href="#publication">Scopus Indexing Info</a></li>
+            <li><a href="#venue">Jaipur Travel Guide</a></li>
+            <li><a href="#contact">Contact Helpdesk</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Stay Connected</h5>
+          <p style="font-size:13px;color:#94a3b8;margin-bottom:14px;">Subscribe to conference news and schedule alerts.</p>
+          <div style="display:flex;gap:8px;">
+            <input type="email" placeholder="Your email address" class="form-control" style="background:#0f172a;border-color:rgba(255,255,255,0.1);font-size:13px;">
+            <button class="btn-header-cta" style="padding:0 16px;font-size:13px;" onclick="alert('Thank you for subscribing to ICETIS-2026 updates!')">Join</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 ICETIS-2026 | Arya College of Engineering & Technology, Jaipur. All Rights Reserved.</div>
+        <div>Designed with Lumen Roof Immersive Day/Night Technology</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       INTERACTIVE MODALS
+       ======================================================================= -->
+
+  <!-- Modal 1: Register Now -->
+  <div class="modal-overlay" id="registerModal" role="dialog" aria-modal="true" aria-labelledby="regModalTitle">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h3 id="regModalTitle">Conference Registration Form</h3>
+        <p>ICETIS-2026 • Arya College of Engineering & Technology, Jaipur</p>
+      </div>
+
+      <form id="regForm">
+        <div class="form-group">
+          <label for="regCategory">Registration Category *</label>
+          <select id="regCategory" class="form-control" required>
+            <option value="student_inr">Indian Student / Research Scholar (₹4,500)</option>
+            <option value="faculty_inr" selected>Indian Academician / Faculty (₹6,000)</option>
+            <option value="industry_inr">Indian Industry Delegate (₹8,500)</option>
+            <option value="intl_student">International Student ($150 USD)</option>
+            <option value="intl_faculty">International Author / Faculty ($250 USD)</option>
+            <option value="attendee">Non-Presenting Attendee (₹2,500 / $100)</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regName">Full Name *</label>
+            <input type="text" id="regName" class="form-control" placeholder="Prof. / Dr. / Full Name" required>
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email Address *</label>
+            <input type="email" id="regEmail" class="form-control" placeholder="name@institution.edu" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regPhone">Mobile Number (with Country Code) *</label>
+            <input type="tel" id="regPhone" class="form-control" placeholder="+91 98290XXXXX" required>
+          </div>
+          <div class="form-group">
+            <label for="regPaper">Accepted Paper ID (If Author)</label>
+            <input type="text" id="regPaper" class="form-control" placeholder="e.g. ICETIS-2026-104">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="regInst">Affiliation / College / University *</label>
+          <input type="text" id="regInst" class="form-control" placeholder="Department & Institution Name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="regTxn">Bank Transaction Reference / UTR Number *</label>
+          <input type="text" id="regTxn" class="form-control" placeholder="Enter SBI NEFT / RTGS / UPI reference" required>
+        </div>
+
+        <button type="submit" class="btn-form-submit" style="margin-top:12px;">Submit Registration</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 2: Submit Your Paper -->
+  <div class="modal-overlay" id="submitModal" role="dialog" aria-modal="true" aria-labelledby="subModalTitle">
+    <div class="modal-container">
+      <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h3 id="subModalTitle">Submit Research Manuscript</h3>
+        <p>ICETIS-2026 Submission Portal • Double-Blind Review</p>
+      </div>
+
+      <form id="paperForm">
+        <div class="form-group">
+          <label for="pTitle">Paper Title *</label>
+          <input type="text" id="pTitle" class="form-control" placeholder="Enter full manuscript title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="pTrack">Primary Conference Track *</label>
+          <select id="pTrack" class="form-control" required>
+            <option value="1">Track 1: Artificial Intelligence, GenAI & Robotics</option>
+            <option value="2">Track 2: Cyber-Physical Systems & Smart IoT</option>
+            <option value="3">Track 3: Cloud, Quantum & Advanced Cybersecurity</option>
+            <option value="4">Track 4: Big Data Analytics & Health Informatics</option>
+            <option value="5">Track 5: Green Energy, Smart Grids & EV Systems</option>
+            <option value="6">Track 6: VLSI, 5G/6G & Optical Communications</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pAuthor">Corresponding Author Name *</label>
+            <input type="text" id="pAuthor" class="form-control" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <label for="pEmail">Corresponding Author Email *</label>
+            <input type="email" id="pEmail" class="form-control" placeholder="author@domain.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pAbstract">Abstract (Max 300 words) *</label>
+          <textarea id="pAbstract" class="form-control" placeholder="Paste your abstract text here..." style="min-height:90px;" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Upload Anonymized Manuscript (PDF only, Max 15MB) *</label>
+          <div class="file-dropzone" onclick="document.getElementById('pFile').click()">
+            <div class="dropzone-icon">📄</div>
+            <div class="dropzone-text">Click or drag & drop your <b>PDF file</b> here</div>
+            <div style="font-size:11.5px;color:var(--text-light);margin-top:4px;">Ensure author names and affiliations are removed for double-blind review.</div>
+            <input type="file" id="pFile" accept=".pdf" style="display:none;" onchange="this.previousElementSibling.textContent = this.files[0] ? this.files[0].name : 'Click or drag & drop your PDF file here'">
+          </div>
+        </div>
+
+        <button type="submit" class="btn-form-submit" style="margin-top:10px;">Upload & Submit Manuscript</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Mobile Off-Canvas Navigation Drawer -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="brand-badge">
+          <div class="brand-logo-icon" style="width:32px;height:32px;font-size:14px;">A</div>
+          <span style="font-weight:700;font-size:16px;">ICETIS-2026</span>
+        </div>
+        <button id="closeDrawerBtn" class="modal-close-btn" style="position:static;" aria-label="Close navigation">&times;</button>
+      </div>
+
+      <ul class="drawer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About ICETIS</a></li>
+        <li><a href="#tracks">Technical Tracks</a></li>
+        <li><a href="#dates">Important Dates</a></li>
+        <li><a href="#guidelines">Author Guidelines</a></li>
+        <li><a href="#registration">Registration</a></li>
+        <li><a href="#publication">Publication</a></li>
+        <li><a href="#speakers">Speakers & Committee</a></li>
+        <li><a href="#venue">Venue & Jaipur</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="drawer-actions">
+        <a href="#guidelines" class="btn-portal-submit" style="justify-content:center;font-size:13.5px;" data-open-modal="submit">Submit Paper</a>
+        <a href="#registration" class="btn-download-template" style="justify-content:center;font-size:13.5px;" data-open-modal="register">Register Now</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
