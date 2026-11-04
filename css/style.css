@@ -1834,6 +1834,142 @@ section {
   border: 1px solid var(--border-light);
 }
 
+/* Committee & Advisory Board Layout */
+.committee-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.comm-tier-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.comm-dual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.comm-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 28px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.comm-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.comm-card-highlight {
+  border-color: rgba(212, 175, 55, 0.45);
+  background: linear-gradient(180deg, var(--bg-surface-elevated) 0%, var(--bg-surface) 100%);
+}
+
+.comm-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+}
+
+.comm-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.comm-card-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(212, 175, 55, 0.12);
+  color: var(--primary);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.comm-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.comm-card-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.comm-card-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 22px;
+}
+
+.comm-member-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.comm-member-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37 0%, #e6c875 100%);
+  color: #171717;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.28);
+}
+
+.comm-member-avatar.sm {
+  width: 38px;
+  height: 38px;
+  font-size: 12.5px;
+}
+
+.comm-member-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.comm-member-name {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.comm-member-desc {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.35;
+  margin-top: 2px;
+}
+
 /* Committee Leadership Cards */
 .committee-table-wrap {
   background: var(--bg-surface);
@@ -2434,6 +2570,10 @@ textarea.form-control {
     gap: 24px;
   }
 
+  .comm-card-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .about-grid,
   .dates-wrapper,
   .venue-grid,
@@ -2514,8 +2654,16 @@ textarea.form-control {
   .guidelines-grid,
   .pub-partners-grid,
   .about-features,
-  .form-row {
+  .form-row,
+  .comm-tier-grid,
+  .comm-dual-grid,
+  .comm-card-grid-4,
+  .comm-card-grid-2 {
     grid-template-columns: 1fr;
+  }
+
+  .comm-card {
+    padding: 22px 18px;
   }
 
   .footer-grid {
