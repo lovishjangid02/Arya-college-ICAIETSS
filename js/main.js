@@ -1,5 +1,5 @@
 /**
- * ICETIS-2026 — Arya College of Engineering, Jaipur
+ * ICAIETSS-2027 — Arya College of Engineering, Jaipur
  * Core JavaScript Engine: Lumen Roof Day/Night WebGL Atmosphere & Interactive UI
  */
 
@@ -36,7 +36,7 @@
   // -------------------------------------------------------------------------
   // 1. THEME INITIALIZATION (DEFAULT DAY, PERSISTENCE VIA LOCALSTORAGE)
   // -------------------------------------------------------------------------
-  const savedTheme = localStorage.getItem('icetis_theme') || 'day';
+  const savedTheme = localStorage.getItem('icaietss_theme') || 'day';
   let initialNight = savedTheme === 'night' ? 1 : 0;
 
   // Set initial attributes immediately to avoid flashing
@@ -206,7 +206,7 @@
   function updateDOMTheme(isNight) {
     const themeName = isNight ? 'night' : 'day';
     docEl.setAttribute('data-theme', themeName);
-    localStorage.setItem('icetis_theme', themeName);
+    localStorage.setItem('icaietss_theme', themeName);
 
     // Toggle set visibility
     const setDay = $('setDay');
@@ -568,7 +568,7 @@
     paperForm.onsubmit = (e) => {
       e.preventDefault();
       closeModal(submitModal);
-      showToast('Paper manuscript uploaded successfully! Paper ID: ICETIS-2026-M' + Math.floor(1000 + Math.random() * 9000));
+      showToast('Paper manuscript uploaded successfully! Paper ID: ICAIETSS-2027-M' + Math.floor(1000 + Math.random() * 9000));
       paperForm.reset();
     };
   }

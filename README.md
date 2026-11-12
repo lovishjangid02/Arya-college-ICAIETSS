@@ -1,6 +1,6 @@
-# ICETIS-2026 — International Conference on Emerging Technologies and Innovative Solutions
+# ICAIETSS-2027 — International Conference on Artificial Intelligence, Emerging Technology and Smart Systems
 
-Official website for the **1st International Conference on Emerging Technologies and Innovative Solutions (ICETIS-2026)** organized by **Arya College of Engineering**, Jaipur, Rajasthan, India.
+Official website for the **1st International Conference on Artificial Intelligence, Emerging Technology and Smart Systems (ICAIETSS-2027)** organized by **Arya College of Engineering**, Jaipur, Rajasthan, India.
 
 📅 **Dates:** December 18–19, 2026  
 📍 **Venue:** Arya College of Engineering, SP-40, RIICO Industrial Area, Kukas, Jaipur, Rajasthan 302028  
@@ -20,7 +20,7 @@ Official website for the **1st International Conference on Emerging Technologies
   - Primary Gold (`#D4AF37`), Champagne Gold (`#E6C875`), and Soft Gold (`#F3E5AB`) paired with Warm White (`#FFFDF5`), Pure White (`#FFFFFF`), and Deep Navy (`#111827`).
   - High-contrast, elegant typography using Google's *Instrument Sans*.
 - **Comprehensive Conference Sections:**
-  - **About:** Overview of ICETIS-2026 and Arya College of Engineering profile.
+  - **About:** Overview of ICAIETSS-2027 and Arya College of Engineering profile.
   - **Technical Tracks:** 6 tracks covering AI/ML, Cyber-Physical IoT, Cloud/Quantum Security, Big Data Healthcare, Green Smart Grids, and 5G/6G VLSI.
   - **Important Dates & Countdown:** Interactive live timer counting down to December 18, 2026.
   - **Call for Papers & Guidelines:** IEEE/Springer author guidelines, plagiarism thresholds, and template download triggers.

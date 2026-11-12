@@ -1,5 +1,5 @@
 /* ==========================================================================
-   ICETIS-2026 — International Conference on Emerging Technologies & Innovative Solutions
+   ICAIETSS-2027 — International Conference on Artificial Intelligence, Emerging Technology and Smart Systems
    Arya College of Engineering, Jaipur
    Design System: Inspired by Lumen Roof Day/Night Immersive Atmosphere
    ========================================================================== */
@@ -754,17 +754,21 @@ img {
 .conference-tag {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 7px 20px;
+  max-width: 100%;
   border-radius: var(--radius-full);
   background: var(--hero-pill-bg);
   border: 1px solid var(--hero-pill-border);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 600;
+  line-height: 1.4;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-align: center;
   color: var(--hero-ink);
   margin-bottom: calc(14 * var(--u));
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -774,6 +778,7 @@ img {
 .tag-dot {
   width: 7px;
   height: 7px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: #d4af37;
   box-shadow: 0 0 10px #d4af37;
@@ -3400,8 +3405,14 @@ textarea.form-control {
     display: flex;
   }
 
+  .conference-tag {
+    font-size: 11px;
+    padding: 8px 16px;
+    border-radius: 18px;
+  }
+
   .hero-title {
-    font-size: clamp(36px, 8.5vw, 56px);
+    font-size: clamp(34px, 8.2vw, 54px);
     margin-top: 16px;
   }
 
