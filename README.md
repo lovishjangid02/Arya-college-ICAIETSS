@@ -2,7 +2,7 @@
 
 Official website for the **1st International Conference on Artificial Intelligence, Emerging Technology and Smart Systems (ICAIETSS-2027)** organized by **Arya College of Engineering**, Jaipur, Rajasthan, India.
 
-📅 **Dates:** December 18–19, 2026  
+📅 **Dates:** 20–21 January 2027  
 📍 **Venue:** Arya College of Engineering, SP-40, RIICO Industrial Area, Kukas, Jaipur, Rajasthan 302028  
 🏆 **Indexing:** Technically sponsored & proceedings submitted to Scopus, Web of Science, and Springer CCIS.
 
@@ -22,7 +22,7 @@ Official website for the **1st International Conference on Artificial Intelligen
 - **Comprehensive Conference Sections:**
   - **About:** Overview of ICAIETSS-2027 and Arya College of Engineering profile.
   - **Technical Tracks:** 6 tracks covering AI/ML, Cyber-Physical IoT, Cloud/Quantum Security, Big Data Healthcare, Green Smart Grids, and 5G/6G VLSI.
-  - **Important Dates & Countdown:** Interactive live timer counting down to December 18, 2026.
+  - **Important Dates & Countdown:** Interactive live timer counting down to 20 January 2027.
   - **Call for Papers & Guidelines:** IEEE/Springer author guidelines, plagiarism thresholds, and template download triggers.
   - **Registration Details:** Dynamic INR (₹) / USD ($) currency switcher with tier pricing tables and bank NEFT/RTGS details.
   - **Publication & Indexing:** Scopus, Web of Science, Springer CCIS series, and SCI Q1/Q2 partner journals.
@@ -76,5 +76,5 @@ npx serve .
 ---
 
 ## 📜 License
-Copyright © 2026 Arya College of Engineering, Jaipur. All rights reserved.
+Copyright © 2027 Arya College of Engineering, Jaipur. All rights reserved.
 

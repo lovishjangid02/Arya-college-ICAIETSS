@@ -427,31 +427,45 @@
   );
 
   // -------------------------------------------------------------------------
-  // 7. COUNTDOWN TIMER TO DECEMBER 18, 2026
+  // 7. COUNTDOWN TIMER TO 20 JANUARY 2027 (09:00:00 IST)
   // -------------------------------------------------------------------------
-  const confDate = new Date('2026-12-18T09:00:00+05:30').getTime();
+  const confDate = new Date('2027-01-20T09:00:00+05:30').getTime();
 
   function updateCountdown() {
-    const now = new Date().getTime();
+    const now = Date.now();
     const diff = confDate - now;
 
+    const daysEl = $('days');
+    const hoursEl = $('hours');
+    const minutesEl = $('minutes');
+    const secondsEl = $('seconds');
+    const headingEl = $('countdownHeading');
+    const subEl = $('countdownSub');
+
     if (diff <= 0) {
-      if ($('days')) $('days').textContent = '00';
-      if ($('hours')) $('hours').textContent = '00';
-      if ($('minutes')) $('minutes').textContent = '00';
-      if ($('seconds')) $('seconds').textContent = '00';
+      if (daysEl) daysEl.textContent = '00';
+      if (hoursEl) hoursEl.textContent = '00';
+      if (minutesEl) minutesEl.textContent = '00';
+      if (secondsEl) secondsEl.textContent = '00';
+      if (headingEl) headingEl.textContent = 'The Conference Has Officially Commenced!';
+      if (subEl) subEl.textContent = 'ICAIETSS-2027 is now in session • 20–21 January 2027';
       return;
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    if (headingEl && headingEl.textContent !== 'Conference Commences In') {
+      headingEl.textContent = 'Conference Commences In';
+    }
 
-    if ($('days')) $('days').textContent = days < 10 ? '0' + days : days;
-    if ($('hours')) $('hours').textContent = hours < 10 ? '0' + hours : hours;
-    if ($('minutes')) $('minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
-    if ($('seconds')) $('seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+    const totalSeconds = Math.max(0, Math.floor(diff / 1000));
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    if (daysEl) daysEl.textContent = days < 10 ? '0' + days : String(days);
+    if (hoursEl) hoursEl.textContent = hours < 10 ? '0' + hours : String(hours);
+    if (minutesEl) minutesEl.textContent = minutes < 10 ? '0' + minutes : String(minutes);
+    if (secondsEl) secondsEl.textContent = seconds < 10 ? '0' + seconds : String(seconds);
   }
 
   setInterval(updateCountdown, 1000);
